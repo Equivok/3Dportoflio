@@ -1,0 +1,216 @@
+@import 'tailwindcss';
+
+/* Polices auto-hébergées via @fontsource (font-display: swap par défaut) */
+@import '@fontsource/modak';
+@import '@fontsource/concert-one';
+@import '@fontsource-variable/plus-jakarta-sans';
+
+@theme {
+  /* Palette "Power-Up" : fond crème chaud, accent corail/orange vif, touche turquoise */
+  --color-cream-50: #fffaf3;
+  --color-cream-100: #fff3e4;
+  --color-cream-200: #ffe6c8;
+  --color-cream-300: #ffd6a3;
+
+  --color-coral-100: #ffe1d6;
+  --color-coral-300: #ff9d75;
+  --color-coral-400: #ff7a4d;
+  --color-coral-500: #ff5a2e;
+  --color-coral-600: #e8461c;
+  --color-coral-700: #c23514;
+
+  --color-turquoise-100: #d7f7f2;
+  --color-turquoise-300: #7be3d3;
+  --color-turquoise-400: #3fd3bd;
+  --color-turquoise-500: #1fb8a2;
+  --color-turquoise-600: #158f7e;
+
+  --color-ink-500: #4a3b3a;
+  --color-ink-700: #2c2220;
+  --color-ink-900: #1b1414;
+
+  --color-sun-300: #ffd166;
+  --color-sun-400: #ffc233;
+
+  --color-border: #cdcdcd;
+
+  --font-display: 'Modak', system-ui, sans-serif;
+  --font-menu: 'Concert One', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  --radius-blob: 2rem;
+  --radius-20: 20px;
+  --radius-pill: 999px;
+
+  --shadow-soft: 0 8px 24px -4px rgba(44, 34, 32, 0.18), 0 2px 6px rgba(44, 34, 32, 0.08);
+  --shadow-pop: 0 12px 32px -6px rgba(255, 90, 46, 0.35);
+}
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-cream-100);
+  color: var(--color-ink-700);
+  font-family: var(--font-body);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-menu);
+  color: var(--color-ink-900);
+}
+
+button {
+  cursor: pointer;
+}
+.py-20 {
+  padding: 20px 0;
+}
+.py-30 {
+  padding: 30px 0;
+}
+.py-40 {
+  padding: 40px 0;
+}
+.px-20 {
+  padding:0 20px;
+}
+.px-30 {
+  padding:0 30px ;
+}
+.px-40 {
+  padding:0 40px ;
+}
+
+/* Focus visible cohérent, accessible au clavier partout */
+:focus-visible {
+  outline: 3px solid var(--color-turquoise-500);
+  outline-offset: 3px;
+  border-radius: var(--radius-pill);
+}
+
+/* Respecte les préférences de mouvement réduit */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Hauteur */
+.h-1{
+  height: 1px;
+}
+.h-600{
+  height: 600px;
+}
+
+/* Avatar */
+.avatar{
+    width: 350px;
+    bottom: -70px;
+    left: -200px;
+}
+
+/* Barre de défilement fine et stylée (menus latéraux) */
+.scrollbar-fine {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-coral-400) transparent;
+}
+.scrollbar-fine::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollbar-fine::-webkit-scrollbar-thumb {
+  background-color: var(--color-coral-400);
+  border-radius: 999px;
+}
+.scrollbar-fine::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Floating TitlePage */
+.floating, .floating > div, .floating > nav{
+  animation: float 2s ease-in-out infinite;
+}
+@keyframes float {
+  0% { transform: translateY(0);}
+  50% {transform: translateY(-8px);}
+  100% {transform: translateY(0);}
+}
+
+/* textures */
+.bg-white{
+  background-color: rgb(255, 255, 255, 1);
+}
+.bg-dark{
+  background-color: #3e434a;
+  background-repeat: repeat;
+}
+
+/* badge */
+.badge-l{
+  width: auto;
+  padding: 10px 40px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  color: white;
+}
+.badge-r{
+  width: auto;
+  max-width: 400px;
+  padding: 10px 40px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  color: white;
+}
+
+
+.ring-dark{
+  border-color: #3e434a;
+}
+.border-grey {
+  border-color:var(--color-border) ;
+}
+
+
+li .bg-white:hover {
+  color: white;
+  background-color: #3e434a;
+}
+
+.sidebarCategory{
+
+  button.category{
+    border-bottom: 1px solid;
+    border-color:var(--color-border) ;
+  }
+  button.category:hover{
+    border-bottom: 1px solid;
+    border-color:var(--color-border) ;
+  }
+}
