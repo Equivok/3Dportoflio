@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Header } from '../components/Header';
 import { DialogueBox } from '../components/DialogueBox';
 import { Scene3D } from '../components/Scene3D';
+import { NavigationGuide } from '../components/NavigationGuide';
 import { TitlePage } from './TitlePage';
 import { useDeviceProfile } from '../hooks/useDeviceProfile';
 import { dialogues } from '../data/dialogues';
@@ -30,6 +31,7 @@ export function HomePage({ visible }: HomePageProps) {
   const device = useDeviceProfile();
   const [sceneReady, setSceneReady] = useState(false);
   const [titreFerme, setTitreFerme] = useState(false);
+  const [guideOuvert, setGuideOuvert] = useState(false);
   const [progressionSimulee, setProgressionSimulee] = useState(0);
   const etaitVisible = useRef(visible);
 
@@ -42,8 +44,14 @@ export function HomePage({ visible }: HomePageProps) {
     if (etaitVisible.current && !visible) {
       setTitreFerme(true);
     }
+    // Revenir sur l'accueil (ex. clic sur le logo "AGRANDJEAN" depuis une
+    // autre page) ré-affiche le guide de navigation, puisque la page tampon
+    // n'est elle-même jamais réaffichée une fois fermée une première fois.
+    if (!etaitVisible.current && visible && titreFerme) {
+      setGuideOuvert(true);
+    }
     etaitVisible.current = visible;
-  }, [visible]);
+  }, [visible, titreFerme]);
 
   useEffect(() => {
     if (device.isLite) return;
@@ -98,7 +106,10 @@ export function HomePage({ visible }: HomePageProps) {
           <TitlePage
             progress={progressionSimulee}
             pret={sceneReady}
-            onEnterScene={() => setTitreFerme(true)}
+            onEnterScene={() => {
+              setTitreFerme(true);
+              setGuideOuvert(true);
+            }}
             onNavigate={(route) => {
               // La fermeture définitive de la page tampon est gérée par
               // l'effet ci-dessus (dès que "visible" passe à false), donc
@@ -115,6 +126,15 @@ export function HomePage({ visible }: HomePageProps) {
       </div>
 
       {titreFerme && <DialogueBox flowId="accueil" repliques={dialogues.accueil} />}
+
+      {/* Guide de navigation (tourner/se déplacer/zoomer) : affiché
+          automatiquement à chaque entrée dans la scène 3D, fermable, et de
+          nouveau affiché à chaque nouvelle visite (pas de mémorisation). */}
+      <AnimatePresence>
+        {titreFerme && guideOuvert && (
+          <NavigationGuide onClose={() => setGuideOuvert(false)} />
+        )}
+      </AnimatePresence>
     </div>
   );
 }

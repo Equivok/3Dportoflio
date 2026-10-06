@@ -1,20 +1,14 @@
 /**
  * Configuration centrale de la scène Spline.
  *
- * Auto-hébergement recommandé : place le fichier exporté (.splinecode) dans
- * `/public/spline/scene.splinecode` puis remplace SPLINE_SCENE_URL par
- * "/spline/scene.splinecode". Cela évite les soucis de CORS et permet de
- * contrôler le cache HTTP (voir vercel.json / netlify headers si besoin).
- *
- * En attendant l'auto-hébergement, on utilise l'URL fournie par l'export
- * Spline (prod.spline.design). À remplacer dès que le fichier est copié
- * dans /public.
+ * Auto-hébergée : le fichier exporté (.splinecode) est servi directement
+ * depuis `/public/spline/scene.splinecode` (donc `dist/spline/scene.splinecode`
+ * après build). Cela évite la latence réseau vers prod.spline.design
+ * (résolution DNS/TLS cross-origin, plus pénalisante sur Firefox à cause de
+ * son cloisonnement réseau plus strict) et permet de contrôler le cache HTTP
+ * via vercel.json si besoin.
  */
-// Étape suivante : copier le fichier .splinecode exporté dans
-// `/public/spline/scene.splinecode`, puis remplacer la ligne ci-dessous par :
-//   export const SPLINE_SCENE_URL = '/spline/scene.splinecode';
-export const SPLINE_SCENE_URL =
-  'https://prod.spline.design/3nyVCTSnHG8Hr80N/scene.splinecode';
+export const SPLINE_SCENE_URL = '/spline/scene.splinecode';
 
 /**
  * Noms des objets cliquables dans la scène Spline.
