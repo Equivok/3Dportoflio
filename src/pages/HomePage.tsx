@@ -97,6 +97,7 @@ export function HomePage({ visible }: HomePageProps) {
         <div className="absolute inset-0 z-40">
           <TitlePage
             progress={progressionSimulee}
+            pret={sceneReady}
             onEnterScene={() => setTitreFerme(true)}
             onNavigate={(route) => {
               // La fermeture définitive de la page tampon est gérée par

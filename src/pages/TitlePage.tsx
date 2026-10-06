@@ -8,6 +8,13 @@ interface TitlePageProps {
   onNavigate: (route: string) => void;
   /** Progression de chargement simulée (0-100), pilotée par le parent si la scène charge en tâche de fond */
   progress?: number;
+  /**
+   * true une fois que la scène 3D est réellement chargée dans le
+   * navigateur (callback onLoad de Spline), indépendamment de la
+   * progression simulée affichée par la barre. Change le libellé en
+   * "Bureau chargé !" dès que c'est le cas.
+   */
+  pret?: boolean;
 }
 
 const RACCOURCIS = [
@@ -54,7 +61,7 @@ interface BoutonMenu {
   onClick: () => void;
 }
 
-export function TitlePage({ onEnterScene, onNavigate, progress = 0 }: TitlePageProps) {
+export function TitlePage({ onEnterScene, onNavigate, progress = 0, pret = false }: TitlePageProps) {
   const [progressionAffichee, setProgressionAffichee] = useState(0);
   const [survole, setSurvole] = useState<string | null>(null);
 
@@ -94,7 +101,7 @@ export function TitlePage({ onEnterScene, onNavigate, progress = 0 }: TitlePageP
           />
         </div>
         <p className="mt-2 font-menu text-xs text-ink-500 floating">
-          Chargement du bureau… {Math.round(progressionAffichee)}%
+          {pret ? 'Bureau chargé !' : `Chargement du bureau… ${Math.round(progressionAffichee)}%`}
         </p>
       </div>
 
