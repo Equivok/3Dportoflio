@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTypewriter } from '../hooks/useTypewriter';
-import { useLocalStorage } from '../hooks/useLocalStorage';
 import type { Expression, Replique } from '../types';
 
 interface DialogueBoxProps {
@@ -16,8 +15,6 @@ interface DialogueBoxProps {
   avatarSrc?: string;
 }
 
-const SON_MUTE_KEY = 'agrandjean:dialogue-muet';
-
 /**
  * Un portrait par expression possible de l'avatar. Chaque fichier doit être
  * déposé dans `public/images/Avatar/` sous le nom de l'expression.
@@ -28,9 +25,9 @@ const AVATAR_PAR_EXPRESSION: Record<Expression, string> = {
   content: '/images/Avatar/content.png',
   mechant:'/images/Avatar/mechant.png',
   montrer: '/images/Avatar/montrer.png',
-  surprise: '/images/Avatar/surprise.png',
-  tantpis: '/images/Avatar/tantpis.png',
-  costume:'/images/Avatar/costume.png',
+  surprise: '/images/Avatar/Agent/surprise.png',
+  tantpis: '/images/Avatar/Agent/tantpis.png',
+  costume:'/images/Avatar/Agent/costume.png',
 };
 
 /**
@@ -48,7 +45,6 @@ export function DialogueBox({ flowId, repliques, avatarSrc }: DialogueBoxProps) 
   // réapparaître à chaque nouvelle "entrée" dans un flux (ex. à chaque clic
   // sur "Expérience totale"), pas rester fermée pour toujours entre sessions.
   const [ferme, setFerme] = useState(false);
-  const [muet, setMuet] = useLocalStorage<boolean>(SON_MUTE_KEY, true);
 
   useEffect(() => {
     setIndex(0);
@@ -159,18 +155,6 @@ export function DialogueBox({ flowId, repliques, avatarSrc }: DialogueBoxProps) 
               </motion.span>
             )}
           </div>
-
-          <button
-            type="button"
-            aria-label={muet ? 'Activer le son' : 'Couper le son'}
-            onClick={(e) => {
-              e.stopPropagation();
-              setMuet((m) => !m);
-            }}
-            className="absolute -top-3 right-8 flex h-8 w-8 items-center justify-center rounded-full bg-cream-200 text-sm shadow-soft hover:bg-cream-300"
-          >
-            {muet ? '🔇' : '🔊'}
-          </button>
 
           <button
             type="button"

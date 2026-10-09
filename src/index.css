@@ -74,7 +74,8 @@ body {
   min-height: 100svh;
 }
 
-h1,
+h1{font-family: var(--font-menu)}
+
 h2,
 h3 {
   font-family: var(--font-menu);

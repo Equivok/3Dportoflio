@@ -2,11 +2,12 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
 
-// Même seuil que le breakpoint Tailwind "md" utilisé ailleurs dans l'app
-// (ex. CvTimeline/SidebarMenu mobile sur la page CV) pour rester cohérent.
-const MOBILE_BREAKPOINT_QUERY = '(max-width: 767px)';
+// Même seuil que le breakpoint Tailwind "lg" utilisé ailleurs dans l'app
+// (ex. CvTimeline/SidebarMenu "mobile" sur la page CV, affiché jusqu'à
+// 1024px) pour rester cohérent.
+const MOBILE_BREAKPOINT_QUERY = '(max-width: 1023px)';
 
-/** true en dessous du breakpoint "md" (mobile), recalculé au redimensionnement. */
+/** true en dessous du breakpoint "lg" (mobile/tablette), recalculé au redimensionnement. */
 function useEstMobile(): boolean {
   const [estMobile, setEstMobile] = useState(
     () => typeof window !== 'undefined' && window.matchMedia(MOBILE_BREAKPOINT_QUERY).matches,
@@ -108,7 +109,7 @@ export function SidebarMenu({
   };
 
   return (
-    <nav aria-label={ariaLabel} className="flex h-full flex-col gap-3 overflow-y-auto scrollbar-fine pr-1">
+    <nav aria-label={ariaLabel} className="flex shadow-soft flex-col gap-3 overflow-y-auto scrollbar-fine rounded-20">
       {categories.map((categorie) => (
         <SidebarCategoryBlock
           key={categorie.id}
@@ -150,12 +151,12 @@ function SidebarCategoryBlock({
   isConsulted,
 }: SidebarCategoryBlockProps) {
   return (
-    <div className="rounded-20 shadow-soft bg-white sidebarCategory">
+    <div className="rounded-20 bg-white sidebarCategory">
       <button
         type="button"
         onClick={onToggle}
         aria-expanded={estOuverte}
-        className="flex w-full items-center justify-between gap-2 p-5 text-left text-base category"
+        className="flex w-full items-center justify-between gap-2 p-5 text-left text-base"
         style={
           categorie.banniere
             ? {
@@ -187,7 +188,7 @@ function SidebarCategoryBlock({
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="overflow-hidden p-4 flex flex-col gap-2"
+            className="overflow-hidden p-4 flex flex-col gap-2 border-t border-grey"
           >
             {categorie.items.map((item) => {
               const selectionne = item.id === selectedId;

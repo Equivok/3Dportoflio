@@ -21,7 +21,7 @@ interface ThreeZoneLayoutProps {
  */
 export function ThreeZoneLayout({ gauche, centre, droite }: ThreeZoneLayoutProps) {
   return (
-    <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col gap-6 px-4 pb-10 pt-28 sm:px-6 lg:flex-row lg:gap-8 lg:pt-32">
+    <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col gap-6 px-4 pb-10 pt-24 sm:px-6 lg:flex-row lg:gap-8 lg:pt-32">
       <aside className="w-full lg:w-[30%]" style={{ minHeight: 0 }}>
         {gauche}
       </aside>

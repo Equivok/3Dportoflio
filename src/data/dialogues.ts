@@ -36,7 +36,7 @@ export const dialogues: Record<DialoguePage, Replique[]> = {
   ],
   cv: [
     {
-      texte: "Ici, tout le parcours : expériences et formations. Sélectionne une entrée pour voir le détail et le radar de compétences.",
+      texte: "Ici, tout le parcours professionnel. Sélectionne une expérience pour voir le détail et le radar de compétences.",
       expression: 'neutre',
     },
   ],

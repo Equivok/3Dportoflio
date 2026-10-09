@@ -67,7 +67,7 @@ export function ProjectsPage() {
                 transition={{ duration: 0.2 }}
                 className="flex h-full flex-col py-20 rounded-20"
               >
-                <div className="flex row flex-nowrap gap-2 px-40 mb-4 text-ink-500 text-sm text-left font-body ">
+                <div className="flex row flex-nowrap gap-2 px-5 mb-4 text-ink-500 text-sm text-left font-body lg:px-10">
                   <div className="fonction">{projetSelectionne.fonction}</div> -
                   <div className="annee">{projetSelectionne.client}</div> - 
                   <div className="annee">{projetSelectionne.annee}</div>
@@ -78,9 +78,9 @@ export function ProjectsPage() {
                   </h2>
                 </div>
                 
-                <div className="scrollbar-fine flex-1 overflow-y-auto pr-1 text-left">
+                <div className="scrollbar-fine flex-1 overflow-y-auto text-left">
 
-                  <div className="px-40">
+                  <div className="px-5 lg:px-10">
                     <p className="mt-3 text-base leading-relaxed text-ink-700">
                       {projetSelectionne.description}
                     </p>

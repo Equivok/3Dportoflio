@@ -1,13 +1,12 @@
-import type { EntreeCV } from '../types';
+﻿import type { EntreeCV } from '../types';
 
 /**
- * Ajouter une expérience ou une formation = ajouter un objet ici.
+ * Ajouter une expérience = ajouter un objet ici.
  * - `numero` : position sur la frise chronologique (1 = la plus récente,
- *   affichée le plus à droite). Numérotation globale partagée entre
- *   `experiences` et `formations` puisqu'elles apparaissent sur une seule
- *   et même frise dans la page CV.
- * - `competences` : conservé pour référence (valeurs de 0 à 100), non utilisé
- *   pour un rendu généré — chaque entrée a son propre visuel pré-rendu.
+ *   affichée le plus à droite).
+ * - `periode` : texte libre affiché à la place d'une simple année (ex.
+ *   "2023 - 2024"). Valeur initiale reprise automatiquement de l'ancienne
+ *   année de fin ; à ajuster manuellement si besoin.
  * - `radarImage` : visuel 3D pré-rendu du radar pour CETTE entrée précise
  *   (WebP/PNG fourni, transparent de préférence), affiché sur le plateau
  *   dans la page CV. Place le fichier dans /public/images/cv/radars/.
@@ -19,7 +18,7 @@ export const experiences: EntreeCV[] = [
     title: 'Application mobile',
     fonction: 'Product Designer',
     numero: 1,
-    annee: 2026,
+    periode: '2026',
     duree: '7 mois',
     client: 'Django - La banque postale',
     lieu: 'île de france',
@@ -36,7 +35,7 @@ export const experiences: EntreeCV[] = [
     title: 'Outil de recouvrement',
     fonction: 'Product Designer',
     numero: 2,
-    annee: 2026,
+    periode: '2026',
     duree: '1 an',
     client: 'Orange',
     lieu: 'île de france',
@@ -53,7 +52,7 @@ export const experiences: EntreeCV[] = [
     title: 'Assistant virtuel basé sur l’intelligence artificielle',
     fonction: 'Product Designer',
     numero: 3,
-    annee: 2025,
+    periode: '2025',
     duree: '3 mois',
     client: 'Orange',
     lieu: 'île de france',
@@ -70,7 +69,7 @@ export const experiences: EntreeCV[] = [
     title: 'Outil de suivi de commande',
     fonction: 'Product Designer',
     numero: 4,
-    annee: 2024,
+    periode: '2024',
     duree: '7 mois',
     client: 'Orange',
     lieu: 'île de france',
@@ -87,7 +86,7 @@ export const experiences: EntreeCV[] = [
     title: 'Outil d’éligibilité',
     fonction: 'Product Designer',
     numero: 5,
-    annee: 2024,
+    periode: '2024',
     duree: '1 mois',
     client: 'Orange',
     lieu: 'île de france',
@@ -103,7 +102,7 @@ export const experiences: EntreeCV[] = [
     title: 'Design system',
     fonction: 'Product Designer',
     numero: 6,
-    annee: 2023,
+    periode: '2023',
     duree: '1 an et 8 mois',
     client: 'Orange',
     lieu: 'île de france',
@@ -120,7 +119,7 @@ export const experiences: EntreeCV[] = [
     title: 'Outil de gestion de rendez-vous',
     fonction: 'Product Designer',
     numero: 7,
-    annee: 2023,
+    periode: '2023',
     duree: '3 mois',
     client: 'Orange',
     lieu: 'île de france',
@@ -137,7 +136,7 @@ export const experiences: EntreeCV[] = [
     title: 'Outil de gestion',
     fonction: 'Product Designer',
     numero: 8,
-    annee: 2023,
+    periode: '2023',
     duree: '3 mois',
     client: 'Orange',
     lieu: 'île de france',
@@ -156,7 +155,7 @@ export const experiences: EntreeCV[] = [
     title: 'Deviseur',
     fonction: 'UX / UI Designer',
     numero: 9,
-    annee: 2021,
+    periode: '2021',
     duree: '1 an et 6 mois',
     client: 'Crédit agricole',
     lieu: 'île de france',
@@ -172,7 +171,7 @@ export const experiences: EntreeCV[] = [
     title: 'Design system',
     fonction: 'UX / UI Designer',
     numero: 10,
-    annee: 2021,
+    periode: '2021',
     duree: '1 an et 6 mois',
     client: 'Crédit agricole',
     lieu: 'île de france',
@@ -188,7 +187,7 @@ export const experiences: EntreeCV[] = [
     title: 'Design system',
     fonction: 'UX / UI Designer',
     numero: 11,
-    annee: 2020,
+    periode: '2020',
     duree: '11 mois',
     client: 'MNT',
     lieu: 'île de france',
@@ -207,7 +206,7 @@ export const experiences: EntreeCV[] = [
     title: 'Nomade',
     fonction: 'UX / UI Designer',
     numero: 12,
-    annee: 2020,
+    periode: '2020',
     duree: '3 mois',
     client: 'La poste',
     lieu: 'île de france',
@@ -224,7 +223,7 @@ export const experiences: EntreeCV[] = [
     title: 'MEILLEUR DEV DE FRANCE',
     fonction: 'UX / UI Designer',
     numero: 13,
-    annee: 2019,
+    periode: '2019',
     duree: '4 mois',
     client: 'Ametix',
     lieu: 'île de france',
@@ -241,7 +240,7 @@ export const experiences: EntreeCV[] = [
     title: 'Deviseur',
     fonction: 'UX / UI Designer',
     numero: 14,
-    annee: 2018,
+    periode: '2018',
     duree: '3 mois',
     client: 'Metlife',
     lieu: 'île de france',
@@ -258,7 +257,7 @@ export const experiences: EntreeCV[] = [
     title: 'Branding',
     fonction: 'UX / UI Designer',
     numero: 15,
-    annee: 2018,
+    periode: '2018',
     duree: '5 mois',
     client: 'Suadeo',
     lieu: 'île de france',
@@ -275,7 +274,7 @@ export const experiences: EntreeCV[] = [
     title: 'Refonte graphique',
     fonction: 'UX / UI Designer',
     numero: 16,
-    annee: 2017,
+    periode: '2017',
     duree: '5 mois',
     client: 'Crédit agricole',
     lieu: 'île de france',
@@ -292,7 +291,7 @@ export const experiences: EntreeCV[] = [
     title: 'Application trading',
     fonction: 'UX / UI Designer',
     numero: 17,
-    annee: 2017,
+    periode: '2017',
     duree: '2 mois',
     client: 'BNP PARIBAS',
     lieu: 'île de france',
@@ -309,7 +308,7 @@ export const experiences: EntreeCV[] = [
     title: "Création d'un site internet",
     fonction: 'UX / UI Designer',
     numero: 18,
-    annee: 2017,
+    periode: '2017',
     duree: '1 mois',
     client: 'Aubay',
     lieu: 'île de france',
@@ -327,7 +326,7 @@ export const experiences: EntreeCV[] = [
     title: 'Blog interne',
     fonction: 'UX / UI Designer',
     numero: 19,
-    annee: 2017,
+    periode: '2017',
     duree: '1 mois',
     client: 'Aubay',
     lieu: 'île de france',
@@ -341,48 +340,3 @@ export const experiences: EntreeCV[] = [
   },
 ];
 
-export const formations: EntreeCV[] = [
-  {
-    id: 'form-master',
-    type: 'formation',
-    title: 'Master Design Numérique',
-    fonction: 'Master Design Numérique',
-    numero: 20,
-    annee: 2021,
-    duree: '2 ans',
-    client: 'École de Design Nantes Atlantique',
-    lieu: 'Nantes, France',
-    resume: [
-      'Spécialisation en design d\'interaction et design de service',
-      "Projet de fin d'études sur l'accessibilité numérique",
-    ],
-    competences: {
-      'UX Research': 65,
-      'UI Design': 60,
-      Prototypage: 55,
-      'Design System': 30,
-      Animation: 45,
-    },
-    radarImage: '/images/cv/radars/form-master.webp',
-  },
-  {
-    id: 'form-licence',
-    type: 'formation',
-    title: 'Licence Arts Appliqués',
-    fonction: 'Licence Arts Appliqués',
-    numero: 21,
-    annee: 2019,
-    duree: '3 ans',
-    client: 'Université Rennes 2',
-    lieu: 'Rennes, France',
-    resume: ['Fondamentaux du design graphique et de la typographie', 'Initiation au code web'],
-    competences: {
-      'UX Research': 30,
-      'UI Design': 50,
-      Prototypage: 25,
-      'Design System': 15,
-      Animation: 20,
-    },
-    radarImage: '/images/cv/radars/form-licence.webp',
-  },
-];

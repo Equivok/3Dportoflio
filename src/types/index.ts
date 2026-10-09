@@ -51,42 +51,23 @@ export interface ExperienceCV {
   type: 'experience';
   title: string;
   fonction: string;
-  numero: number;
-  annee: number;
-  duree: string;
-  client: string;
-  lieu: string;
-  resume: string[];
-  radarImage: string;
-}
-
-export interface FormationCV {
-  id: string;
-  type: 'formation';
-  title: string;
-  fonction: string;
   /**
    * Position sur la frise chronologique de la page CV : 1 = l'entrée la
    * plus récente (affichée le plus à droite de la frise), puis par ordre
    * croissant vers le passé (vers la gauche). Contrôle entièrement l'ordre
-   * d'affichage, indépendamment de `annee`.
+   * d'affichage, indépendamment de `periode`.
    */
   numero: number;
-  annee: number;
+  /** Période de l'expérience en texte libre (ex. "2023 - 2024") */
+  periode: string;
   duree: string;
   client: string;
   lieu: string;
   resume: string[];
-  /** Conservé pour référence/légende, mais non utilisé pour un rendu Recharts */
-  competences: CompetencesRadar;
-  /**
-   * Visuel 3D pré-rendu (statique, fourni par toi) du graphique radar de
-   * cette formation précise, affiché par-dessus le plateau sur la page CV.
-   */
   radarImage: string;
 }
 
-export type EntreeCV = ExperienceCV | FormationCV;
+export type EntreeCV = ExperienceCV;
 
 export type Expression = 'neutre' | 'content' |'mechant' | 'costume' | 'montrer' | 'surprise' | 'tantpis';
 

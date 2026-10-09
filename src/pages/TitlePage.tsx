@@ -18,9 +18,9 @@ interface TitlePageProps {
 }
 
 const RACCOURCIS = [
-  { label: 'Mes projets', route: '/projets' },
-  { label: 'Mon CV', route: '/cv' },
-  { label: 'Me contacter', route: '/contact' },
+  { label: 'Afficher les projets', route: '/projets' },
+  { label: 'Accéder au CV', route: '/cv' },
+  { label: 'Prendre contact', route: '/contact' },
 ];
 
 /**
@@ -70,7 +70,7 @@ export function TitlePage({ onEnterScene, onNavigate, progress = 0, pret = false
   }, [progress]);
 
   const boutons: BoutonMenu[] = [
-    { id: 'experience', label: 'Expérience totale', onClick: onEnterScene },
+    { id: 'experience', label: "Découvrir l'expérience 3D", onClick: onEnterScene },
     ...RACCOURCIS.map((r) => ({ id: r.route, label: r.label, onClick: () => onNavigate(r.route) })),
   ];
 
@@ -79,63 +79,67 @@ export function TitlePage({ onEnterScene, onNavigate, progress = 0, pret = false
   const idActif = survole;
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center gap-10 bg-gradient-to-b from-cream-100 via-cream-100 to-coral-100 px-6 text-center ">
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <h1 className="font-display text-9xl leading-none text-coral-500 drop-shadow-sm sm:text-9xl floating">
-          A<span className="text-ink-900">GRANDJEAN</span>
-        </h1>
-        <p className="mt-3 font-menu text-sm text-ink-700 sm:text-base floating">Product Designer</p>
-      </motion.div>
+    <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-cream-100 via-cream-100 to-coral-100">
+      <div className='flex flex-col items-center justify-center text-center gap-10 floating '>
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className=''
+        >
+          <h1 className="font-display text-9xl leading-none text-coral-500 drop-shadow-sm sm:text-9xl">
+            A<span className="text-ink-900">GRANDJEAN</span>
+          </h1>
+          <p className="mt-3 font-menu text-3xl text-coral-500 uppercase ">
+            <span className="text-ink-900">Product Designer</span> PORTFOLIO</p>
+        </motion.div>
 
-      <div className="w-full max-w-sm floating">
-        <div className="h-4 w-full overflow-hidden rounded-pill bg-cream-300 shadow-soft">
-          <motion.div
-            className="h-full rounded-pill bg-coral-500"
-            initial={{ width: 0 }}
-            animate={{ width: `${Math.min(progressionAffichee, 100)}%` }}
-            transition={{ ease: 'easeOut', duration: 0.3 }}
-          />
+        <div className="w-full max-w-sm">
+          <div className="h-4 w-full overflow-hidden rounded-pill bg-cream-300 shadow-soft">
+            <motion.div
+              className="h-full rounded-pill bg-coral-500"
+              initial={{ width: 0 }}
+              animate={{ width: `${Math.min(progressionAffichee, 100)}%` }}
+              transition={{ ease: 'easeOut', duration: 0.3 }}
+            />
+          </div>
+          <p className="mt-2 font-menu text-base text-ink-500">
+            {pret ? 'Bureau chargé !' : `Chargement du bureau… ${Math.round(progressionAffichee)}%`}
+          </p>
         </div>
-        <p className="mt-2 font-menu text-xs text-ink-500 floating">
-          {pret ? 'Bureau chargé !' : `Chargement du bureau… ${Math.round(progressionAffichee)}%`}
-        </p>
-      </div>
 
-      <nav aria-label="Accès rapide" className="flex flex-col items-center gap-3 floating">
-        {boutons.map((bouton) => {
-          const estActif = bouton.id === idActif;
-          return (
-            <div key={bouton.id} className="relative">
-              <AnimatePresence>
-                {estActif && <IndicateurSelection key="gauche" sens="gauche" />}
-              </AnimatePresence>
-              <button
-                type="button"
-                onClick={bouton.onClick}
-                onMouseEnter={() => setSurvole(bouton.id)}
-                onMouseLeave={() => setSurvole(null)}
-                onFocus={() => setSurvole(bouton.id)}
-                onBlur={() => setSurvole(null)}
-                className={[
-                  'w-56 rounded-pill px-5 py-2.5 font-menu text-lg shadow-soft transition-colors',
-                  estActif
-                    ? 'bg-coral-500 text-white shadow-pop'
-                    : 'bg-cream-50 text-ink-700 hover:text-coral-600',
-                ].join(' ')}
-              >
-                {bouton.label}
-              </button>
-              <AnimatePresence>
-                {estActif && <IndicateurSelection key="droite" sens="droite" />}
-              </AnimatePresence>
-            </div>
-          );
-        })}
-      </nav>
+        <nav aria-label="Accès rapide" className="flex flex-col items-center gap-3">
+          {boutons.map((bouton) => {
+            const estActif = bouton.id === idActif;
+            return (
+              <div key={bouton.id} className="relative">
+                <AnimatePresence>
+                  {estActif && <IndicateurSelection key="gauche" sens="gauche" />}
+                </AnimatePresence>
+                <button
+                  type="button"
+                  onClick={bouton.onClick}
+                  onMouseEnter={() => setSurvole(bouton.id)}
+                  onMouseLeave={() => setSurvole(null)}
+                  onFocus={() => setSurvole(bouton.id)}
+                  onBlur={() => setSurvole(null)}
+                  className={[
+                    'w-60 rounded-pill px-5 py-2.5 font-menu text-lg shadow-soft transition-colors',
+                    estActif
+                      ? 'bg-coral-500 text-white shadow-pop'
+                      : 'bg-cream-50 text-ink-700 hover:text-coral-600',
+                  ].join(' ')}
+                >
+                  {bouton.label}
+                </button>
+                <AnimatePresence>
+                  {estActif && <IndicateurSelection key="droite" sens="droite" />}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+        </nav>
+      </div>
     </div>
   );
 }

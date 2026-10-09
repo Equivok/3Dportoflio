@@ -11,16 +11,15 @@ interface CvTimelineProps {
 
 /**
  * Frise chronologique horizontale (passé → présent, de gauche à droite)
- * des expériences et formations, sans fond ni ombre, en pleine largeur
- * disponible. Réservée au desktop (≥ md) : sur mobile, la navigation entre
- * entrées se fait via un menu déroulant (voir SidebarMenu dans CvPage), les
- * points de cette frise étant une cible tactile trop petite. L'ordre est
- * piloté par le champ `numero` de chaque entrée (1 = la plus récente,
- * affichée la plus à droite). Points ronds pour les expériences, losanges
- * pour les formations. L'année est affichée sous chaque point pour
- * faciliter la lecture. Tooltip au survol (client, année, fonction). Les
- * flèches de navigation précédent/suivant sont gérées séparément par la
- * page (voir CvPage).
+ * des expériences, sans fond ni ombre, en pleine largeur disponible.
+ * Réservée au desktop (≥ 1024px/lg) : en dessous de ce seuil (y compris sur
+ * tablette, jusqu'à 1024px), la navigation entre entrées se fait via un menu
+ * déroulant (voir SidebarMenu dans CvPage), les points de cette frise étant
+ * une cible tactile trop petite. L'ordre est piloté par le champ `numero`
+ * de chaque entrée (1 = la plus récente, affichée la plus à droite). La
+ * période est affichée sous chaque point pour faciliter la lecture. Tooltip
+ * au survol (client, période, fonction). Les flèches de navigation
+ * précédent/suivant sont gérées séparément par la page (voir CvPage).
  *
  * Positionnée dans le flux normal du document (pas de `fixed`/`absolute`),
  * juste en dessous des deux blocs de contenu : elle ne peut donc jamais les
@@ -36,8 +35,8 @@ export function CvTimeline({ entrees, selectedId, onSelect }: CvTimelineProps) {
   return (
     <div
       role="group"
-      aria-label="Frise chronologique des expériences et formations"
-      className="hidden w-full px-6 py-6 md:block sm:px-10"
+      aria-label="Frise chronologique des expériences"
+      className="hidden w-full px-6 py-6 lg:block sm:px-10"
     >
       <div className="relative flex w-full items-center px-4">
         {/* Ligne de la frise, sombre pour un meilleur contraste */}
@@ -46,7 +45,6 @@ export function CvTimeline({ entrees, selectedId, onSelect }: CvTimelineProps) {
         <div className="flex w-full items-center justify-between">
           {triees.map((entree) => {
             const selectionne = entree.id === selectedId;
-            const estFormation = entree.type === 'formation';
             return (
               <div key={entree.id} className="relative z-10 flex flex-col items-center">
                 <button
@@ -57,18 +55,17 @@ export function CvTimeline({ entrees, selectedId, onSelect }: CvTimelineProps) {
                   onFocus={() => setSurligne(entree.id)}
                   onBlur={() => setSurligne(null)}
                   aria-current={selectionne ? 'true' : undefined}
-                  aria-label={`${entree.title} — ${entree.client}, ${entree.annee}`}
+                  aria-label={`${entree.title} — ${entree.client}, ${entree.periode}`}
                   className={clsx(
-                    'flex items-center justify-center border-2 transition-transform hover:scale-110',
-                    estFormation ? 'h-3.5 w-3.5 rotate-45' : 'h-3.5 w-3.5 rounded-full',
+                    'h-3.5 w-3.5 flex items-center justify-center rounded-full border-2 transition-transform hover:scale-110',
                     selectionne
                       ? 'scale-150 border-cream-50 bg-coral-500 shadow-pop ring-1 ring-ink-900'
                       : 'border-coral-500 bg-cream-50',
                   )}
                 />
 
-                {/* Année affichée en permanence sous le point. Positionnée en
-                    absolu (hors flux) pour ne jamais décaler l'alignement
+                {/* Période affichée en permanence sous le point. Positionnée
+                    en absolu (hors flux) pour ne jamais décaler l'alignement
                     vertical du point sur la ligne de la frise. */}
                 <span
                   aria-hidden="true"
@@ -77,7 +74,7 @@ export function CvTimeline({ entrees, selectedId, onSelect }: CvTimelineProps) {
                     selectionne ? 'text-coral-600' : 'text-ink-700',
                   )}
                 >
-                  {entree.annee}
+                  {entree.periode}
                 </span>
 
                 {surligne === entree.id && (
@@ -88,7 +85,7 @@ export function CvTimeline({ entrees, selectedId, onSelect }: CvTimelineProps) {
                   >
                     <p className="font-menu">{entree.client}</p>
                     <p className="text-cream-100/80">
-                      {entree.fonction} · {entree.annee}
+                      {entree.fonction} · {entree.periode}
                     </p>
                   </motion.div>
                 )}
