@@ -198,6 +198,35 @@ button {
   border-color:var(--color-border) ;
 }
 
+/* Tags de compétences (page Projets) : 4 couleurs complémentaires à la
+   palette existante (corail, turquoise déjà utilisés ailleurs dans l'UI,
+   jaune "sun" et encre neutre ajoutés spécifiquement pour la variété). */
+.tag-competence {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-menu);
+  font-size: rem;
+  white-space: nowrap;
+}
+.tag-competence--coral {
+  background-color: var(--color-coral-100);
+  color: var(--color-coral-700);
+}
+.tag-competence--turquoise {
+  background-color: var(--color-turquoise-100);
+  color: var(--color-turquoise-600);
+}
+.tag-competence--sun {
+  background-color: #fff3cf;
+  color: #8a6400;
+}
+.tag-competence--ink {
+  background-color: #e7e2e0;
+  color: var(--color-ink-700);
+}
+
 
 li .bg-white:hover {
   color: white;

@@ -8,7 +8,7 @@ import type { DialoguePage, Replique } from '../types';
 export const dialogues: Record<DialoguePage, Replique[]> = {
   accueil: [
     {
-      texte: "Oh ! Un visiteur ! Vous êtes sur le bureau d’Alex. Normalement, je suis censé empêcher ce genre de choses quand il n’est pas là.",
+      texte: "Oh ! Un visiteur ! Vous êtes sur le bureau d’Alex. Normalement, je suis censé empêcher ce genre de choses quand il n’est pas là.Oh ! Un visiteur ! Vous êtes sur le bureau d’Alex. Normalement, je suis censé empêcher ce genre de choses quand il ",
       expression: 'surprise',
     },
     {

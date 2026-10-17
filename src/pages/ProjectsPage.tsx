@@ -10,6 +10,7 @@ import { useLocalStorage } from '../hooks/useLocalStorage';
 import { useDeviceProfile } from '../hooks/useDeviceProfile';
 import { projects } from '../data/projects';
 import { dialogues } from '../data/dialogues';
+import type { BlocContenu } from '../types';
 
 export function ProjectsPage() {
   const device = useDeviceProfile();
@@ -73,7 +74,7 @@ export function ProjectsPage() {
                   <div className="annee">{projetSelectionne.annee}</div>
                 </div>
                 <div className="flex">
-                  <h2 className="text-left font-menu text-2xl text-ink-900 bg-dark badge-l">
+                  <h2 className="text-left font-menu text-3xl text-ink-900 bg-dark badge-l">
                     {projetSelectionne.titre}
                   </h2>
                 </div>
@@ -81,18 +82,27 @@ export function ProjectsPage() {
                 <div className="scrollbar-fine flex-1 overflow-y-auto text-left">
 
                   <div className="px-5 lg:px-10">
-                    <p className="mt-3 text-base leading-relaxed text-ink-700">
-                      {projetSelectionne.description}
-                    </p>
-                    <hr className="my-4 border-grey" />
+                    {/* Tags de compétences/outils utilisés sur ce projet,
+                        à la place d'un résumé textuel. */}
+                    <ul className="mt-3 flex flex-wrap gap-2" aria-label="Compétences utilisées sur ce projet">
+                      {projetSelectionne.competences.map((competence) => (
+                        <li key={competence.label} className={`tag-competence tag-competence--${competence.couleur}`}>
+                          {competence.label}
+                        </li>
+                      ))}
+                    </ul>
 
-                    <SectionProjet titre="Contexte" texte={projetSelectionne.contexte} />
+                    {projetSelectionne.contexte && (
+                      <>
+                        <SectionProjet titre="Contexte" blocs={projetSelectionne.contexte} />
+                        <hr className="my-4 border-grey" />
+                      </>
+                    )}
+                    <SectionProjet titre="Mon rôle" blocs={projetSelectionne.monRole} />
                     <hr className="my-4 border-grey" />
-                    <SectionProjet titre="Mon rôle" texte={projetSelectionne.monRole} />
+                    <SectionProjet titre="Démarche" blocs={projetSelectionne.demarche} />
                     <hr className="my-4 border-grey" />
-                    <SectionProjet titre="Démarche" texte={projetSelectionne.demarche} />
-                    <hr className="my-4 border-grey" />
-                    <SectionProjet titre="Résultat" texte={projetSelectionne.resultat} />
+                    <SectionProjet titre="Résultat" blocs={projetSelectionne.resultat} />
                     {projetSelectionne.liens && (
                       <ul className="mt-4 flex flex-col gap-1">
                         {projetSelectionne.liens.map((lien) => (
@@ -129,12 +139,46 @@ export function ProjectsPage() {
   );
 }
 
-/** Petite section titrée (Contexte, Mon rôle, Démarche, Résultat) dans le panneau central. */
-function SectionProjet({ titre, texte }: { titre: string; texte: string }) {
+/**
+ * Petite section titrée (Contexte, Mon rôle, Démarche, Résultat) dans le
+ * panneau central. Le contenu est un tableau de blocs mélangeables
+ * librement : paragraphes, sous-titres et listes à puces (voir
+ * `BlocContenu` dans src/types). Chaque projet choisit la combinaison de
+ * blocs qui lui convient dans src/data/projects.ts.
+ */
+function SectionProjet({ titre, blocs }: { titre: string; blocs: BlocContenu[] }) {
   return (
-    <div className="mt-4">
-      <h3 className="font-menu text-xl text-ink-900">{titre}</h3>
-      <p className="mt-1 text-base leading-relaxed text-ink-700">{texte}</p>
+    <div className="mt-4 flex flex-col">
+      <h3 className="font-menu text-2xl text-ink-900">{titre}</h3>
+      <div className="mt-2 flex flex-col gap-2">
+        {blocs.map((bloc, i) => (
+          <BlocProjet key={i} bloc={bloc} />
+        ))}
+      </div>
     </div>
   );
+}
+
+/** Rendu d'un bloc de contenu unique, selon son type (voir `BlocContenu`). */
+function BlocProjet({ bloc }: { bloc: BlocContenu }) {
+  switch (bloc.type) {
+    case 'sous-titre':
+      return <h4 className="text-base font-bold mt-2">{bloc.texte}</h4>;
+    case 'liste':
+      return (
+        <ul className="flex flex-col gap-2">
+          {bloc.items.map((item, i) => (
+            <li key={i} className="flex gap-2 text-base leading-relaxed text-ink-700">
+              <span aria-hidden="true" className="text-coral-500">
+                ●
+              </span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      );
+    case 'paragraphe':
+    default:
+      return <p className="text-base leading-relaxed text-ink-700">{bloc.texte}</p>;
+  }
 }

@@ -24,7 +24,7 @@ const AVATAR_PAR_EXPRESSION: Record<Expression, string> = {
   neutre: '/images/Avatar/neutre.png',
   content: '/images/Avatar/content.png',
   mechant:'/images/Avatar/mechant.png',
-  montrer: '/images/Avatar/montrer.png',
+  montrer: '/images/Avatar/Agent/montrer.png',
   surprise: '/images/Avatar/Agent/surprise.png',
   tantpis: '/images/Avatar/Agent/tantpis.png',
   costume:'/images/Avatar/Agent/costume.png',

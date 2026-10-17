@@ -149,23 +149,23 @@ function MobileHomePage() {
           <h1 className="font-display text-4xl text-coral-500">
             A<span className="text-ink-900">GRANDJEAN</span>
           </h1>
-          <p className="mt-2 font-menu text-sm text-ink-700">Product Designer web & application</p>
+          <p className="mt-2 font-menu text-base text-ink-700">Product Designer web & application</p>
         </motion.div>
 
-        <p className="max-w-md text-sm text-ink-700">
+        <p className="max-w-md text-base text-ink-700">
           Bienvenue ! Cette version mobile met de côté la scène 3D pour rester rapide et légère.
           Explore mes projets, mon CV, ou dis-moi bonjour.
         </p>
 
         <div className="flex w-full max-w-xs flex-col gap-3">
-          <Link to="/projets" className="rounded-pill bg-coral-500 px-5 py-3 font-menu text-sm text-white shadow-pop">
-            Voir les projets
+          <Link to="/projets" className="rounded-pill bg-coral-500 px-5 py-3 font-menu text-base text-white shadow-pop">
+            Afficher les projets
           </Link>
-          <Link to="/cv" className="rounded-pill bg-cream-50 px-5 py-3 font-menu text-sm text-ink-700 shadow-soft">
-            Voir le CV
+          <Link to="/cv" className="rounded-pill bg-cream-50 px-5 py-3 font-menu text-base text-ink-700 shadow-soft">
+            Accéder au CV
           </Link>
-          <Link to="/contact" className="rounded-pill bg-cream-50 px-5 py-3 font-menu text-sm text-ink-700 shadow-soft">
-            Me contacter
+          <Link to="/contact" className="rounded-pill bg-cream-50 px-5 py-3 font-menu text-base text-ink-700 shadow-soft">
+            Prendre contact
           </Link>
         </div>
       </main>
