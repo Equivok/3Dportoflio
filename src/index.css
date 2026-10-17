@@ -2,7 +2,7 @@
 
 /* Polices auto-hébergées via @fontsource (font-display: swap par défaut) */
 @import '@fontsource/modak';
-@import '@fontsource/concert-one';
+@import '@fontsource/jost';
 @import '@fontsource-variable/plus-jakarta-sans';
 
 @theme {
@@ -35,7 +35,7 @@
   --color-border: #cdcdcd;
 
   --font-display: 'Modak', system-ui, sans-serif;
-  --font-menu: 'Concert One', system-ui, sans-serif;
+  --font-menu: 'Jost', system-ui, sans-serif;
   --font-body: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', system-ui, sans-serif;
 
   --radius-blob: 2rem;

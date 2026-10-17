@@ -24,7 +24,7 @@ export function Header() {
               to="/"
               end
               aria-label="Retour à l'accueil"
-              className="relative shrink-0 rounded-pill px-3 py-2 font-menu text-base transition-colors sm:text-base"
+              className="relative shrink-0 rounded-pill px-3 py-2 font-menu font-black text-base transition-colors sm:text-base"
             >
               {({ isActive }) => (
                 <>

@@ -110,49 +110,53 @@ export const projects: Projet[] = [
       {
         type: 'paragraphe',
         texte:
-          'Orange disposait d’un outil de recouvrement historique, Frégate, mais celui-ci ne répondait plus aux critères attendus en matière de sécurité des données, de maintenance et d’usage. L’outil s’appuyait sur un environnement technique ancien, notamment avec des briques Cobol, ce qui rendait la maintenance plus compliquée.',
+          "Orange a engagé la refonte d'un outil interne de recouvrement, utilisé par plusieurs équipes pour traiter des dossiers soumis à des règles métier et à des contraintes réglementaires. Chaque dossier passe par différentes étapes et plusieurs équipes, avec leurs propres processus de validation.",
       },
       {
         type: 'paragraphe',
         texte:
-          'L’interface avait vieilli. La navigation ne correspondait plus aux habitudes d’usage actuelles et rendait la prise en main difficile pour les équipes métier. Sur une activité déjà complexe comme le recouvrement (typologies clients multiples, règles spécifiques, contraintes légales et données sensibles) cela créait une perte d’efficience et augmentait le temps nécessaire pour traiter les dossiers.',
+          "La mission devait faciliter le suivi des dossiers et la prise de décision des conseillers, tout en répondant aux exigences de sécurité, de maintenance et d'intégration au système d'information.",
       },
     ],
     monRole: [
       {
         type: 'paragraphe',
         texte:
-          'J’ai piloté la conception UX du nouvel outil, avec un double enjeu : proposer une interface plus claire pour les utilisateurs, tout en respectant les principes de connexion à l’architecture globale Orange.',
+          "J'ai piloté la conception UX du nouvel outil et coordonné le travail de plusieurs équipes design et développement.",
       },
       {
         type: 'paragraphe',
         texte:
-          'J’ai pu superviser le travail de plusieurs équipes design et développement. Mon rôle était de garantir la cohérence des maquettes produites, d’éviter que chaque équipe avance dans sa propre logique et de maintenir une compréhension partagée de l’outil.',
+          "Mon rôle consistait à garantir la cohérence des parcours et des maquettes, à faire converger les propositions et à maintenir une vision partagée du produit entre les métiers, le design et la technique.",
       },
     ],
     demarche: [
+      { type: 'sous-titre', texte: "Donner aux conseillers une vision claire de chaque dossier" },
       {
         type: 'paragraphe',
         texte:
-          'Le travail a été mené en co-construction avec les représentants métier à chaque étape. L’objectif était de repartir des usages réels, de comprendre les contraintes opérationnelles, les cas limites et les règles qui structurent le recouvrement avant de figer les parcours.',
+          "Lorsqu'un conseiller intervient sur un dossier de recouvrement, plusieurs actions ont déjà été menées par d'autres équipes. J'ai repensé la présentation des informations pour rendre l'historique des interventions accessible et permettre aux conseillers de comprendre rapidement la situation avant de prendre une décision.",
       },
+      { type: 'sous-titre', texte: "Adapter les actions aux différentes étapes du recouvrement" },
       {
         type: 'paragraphe',
         texte:
-          'Le travail devait non seulement simplifier l’interface, mais aussi rendre l’outil plus facile à utiliser. Une partie importante ma mission consistait à aligner métiers, design et technique autour d’un même outil, malgré la complexité du périmètre et les contraintes du système existant.',
+          "Chaque étape du dossier implique des règles métier et des processus de validation spécifiques. J'ai travaillé à leur intégration dans les parcours pour conditionner l'accès à certaines actions selon l'avancement du dossier et l'équipe concernée, et ainsi mieux guider les conseillers dans leur traitement et ainsi limiter les erreurs de traitement.",
+      },
+      { type: 'sous-titre', texte: "Construire une expérience cohérente entre plusieurs équipes" },
+      {
+        type: 'paragraphe',
+        texte:
+          "La conception a été menée en co-construction avec les représentants métier pour comprendre leurs usages, leurs contraintes et les cas particuliers. J'ai également coordonné les équipes design et développement afin d'harmoniser les parcours et de garantir une expérience cohérente sur l'ensemble de l'outil, dans le respect des contraintes techniques.",
       },
     ],
     resultat: [
       {
-        type: 'paragraphe',
-        texte:
-          'La refonte a permis de simplifier la navigation et d’améliorer la prise en main par les équipes métier. Les retours montrent que l’outil n’est plus un obstacle supplémentaire dans une fonction déjà complexe.',
-      },
-      {
         type: 'liste',
         items: [
-          'Des gains d’ETP ont été mesurés.',
-          'Le projet a aussi eu comme co-bénéfice de retrouver et de mieux formaliser plusieurs règles métier jusque-là implicites ou dispersées.',
+          "La refonte a permis de simplifier la navigation et de faciliter la prise en main de l'outil par les équipes métier.",
+          "Des gains en équivalents temps plein (ETP) ont été mesurés à la suite de la refonte.",
+          "Le travail de co-construction a également permis d'identifier et de mieux formaliser plusieurs règles métier jusque-là implicites ou dispersée",
         ],
       },
     ],
