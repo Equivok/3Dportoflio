@@ -74,7 +74,7 @@ export function ProjectsPage() {
                   <div className="annee">{projetSelectionne.annee}</div>
                 </div>
                 <div className="flex">
-                  <h2 className="text-left font-menu text-3xl text-ink-900 bg-dark badge-l">
+                  <h2 className="text-left font-menu text-2xl text-ink-900 bg-dark badge-l">
                     {projetSelectionne.titre}
                   </h2>
                 </div>
@@ -149,7 +149,7 @@ export function ProjectsPage() {
 function SectionProjet({ titre, blocs }: { titre: string; blocs: BlocContenu[] }) {
   return (
     <div className="mt-4 flex flex-col">
-      <h3 className="font-menu text-2xl text-ink-900">{titre}</h3>
+      <h3 className="font-menu text-xl font-bold text-ink-900">{titre}</h3>
       <div className="mt-2 flex flex-col gap-2">
         {blocs.map((bloc, i) => (
           <BlocProjet key={i} bloc={bloc} />
