@@ -90,8 +90,7 @@ export function TitlePage({ onEnterScene, onNavigate, progress = 0, pret = false
           <h1 className="font-display text-9xl leading-none text-coral-500 drop-shadow-sm sm:text-9xl">
             A<span className="text-ink-900">GRANDJEAN</span>
           </h1>
-          <p className="mt-3 font-menu text-3xl text-coral-500 uppercase ">
-            <span className="text-ink-900">Product Designer</span> PORTFOLIO</p>
+          <p className="mt-3 font-menu text-3xl text-ink-900 uppercase ">Product Designer</p>
         </motion.div>
 
         <div className="w-full max-w-sm">

@@ -8,42 +8,34 @@ import type { DialoguePage, Replique } from '../types';
 export const dialogues: Record<DialoguePage, Replique[]> = {
   accueil: [
     {
-      texte: "Oh ! Un visiteur ! Vous êtes sur le bureau d’Alex. Normalement, je suis censé empêcher ce genre de choses quand il n’est pas là.Oh ! Un visiteur ! Vous êtes sur le bureau d’Alex. Normalement, je suis censé empêcher ce genre de choses quand il ",
+      texte: "Oh non! Un visiteur ! \n Normalement, je suis censé empêcher ce genre de choses quand Alex n’est pas là !",
       expression: 'surprise',
     },
     {
-      texte: "Agent 404, maintenance web. D’habitude, je m’occupe de liens cassés et de pages perdues. De toute évidence, je vais aussi devoir vous servir de guide.",
+      texte: "Bon.. Hum.. Bienvenue.. \n Moi c'est l'agent 404, maintenance web. \n D’habitude, je m’occupe de liens cassés et de pages perdues. De toute évidence, je vais aussi devoir vous servir de guide.",
       expression: 'costume',
     },
     {
-      texte: 'Bon. Je ne sais quand Alex revient. Il a laissé quelques trucs accessibles, alors autant en profiter.',
-      expression: 'tantpis',
-    },
-    {
-      texte:'L’ordinateur contient son CV.L’écran vous donnera accès à ses projets.Et si vous voulez directement lui parler, il y a le téléphone.',
-      expression: 'montrer',
-    },
-    {
-      texte:'Pour le reste… Vous pouvez explorer. Je resterai dans le coin. Au cas où…',
+      texte: "Vous êtes sur le bureau d'Alex, L’ordinateur contient son CV. L’écran vous donnera accès à ses projets. Et si vous voulez directement lui parler, il y a le téléphone.",
       expression: 'montrer',
     },
   ],
   projets: [
     {
       texte: "Voici les projets d'Alexandre, classés par catégorie. Choisis-en un pour en savoir plus !",
-      expression: 'content',
+      expression: 'costume',
     },
   ],
   cv: [
     {
-      texte: "Ici, tout le parcours professionnel. Sélectionne une expérience pour voir le détail et le radar de compétences.",
-      expression: 'neutre',
+      texte: "Ici, tout le parcours professionnel. Sélectionne une expérience pour voir le détail.",
+      expression: 'montrer',
     },
   ],
   contact: [
     {
       texte: "Une idée de projet, une question ? C'est le bon endroit pour dire bonjour !",
-      expression: 'content',
+      expression: 'costume',
     },
   ],
 };

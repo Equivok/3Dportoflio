@@ -20,19 +20,19 @@ export const projects: Projet[] = [
     client: 'Django',
     annee: 2026,
     competences: [
-      { label: 'Design system', couleur: 'turquoise' },
+      { label: 'Design system', couleur: 'coral' },
       { label: 'Accessibilité', couleur: 'coral' },
-      { label: 'Prototypage', couleur: 'sun' },
+      { label: 'Prototypage', couleur: 'coral' },
     ],
     fonction: 'Product Designer',
     contexte: [
       { type: 'paragraphe',
         texte:
-          'Django propose une application mobile de souscription de crédits à la consommation associée d’un back-office destiné aux conseillers.',
+          "Django propose une application mobile de crédits à la consommation et dispose d’un outil de back-office destiné aux conseillers.",
       },
       { type: 'paragraphe',
         texte:
-          "La mission devait fluidifier le parcours client et faciliter le suivi des dossiers par les conseillers, tout en accompagnant l'évolution des outils.",
+          "L'objectif de la mission était de fluidifier le parcours client et de faciliter le suivi des dossiers par les conseillers, tout en accompagnant l'évolution des outils.",
       },
     ],
     monRole: [
@@ -58,7 +58,7 @@ export const projects: Projet[] = [
       { type: 'sous-titre', texte: "Accompagner l'évolution du produit par la consolidation du design system" },
       { type: 'paragraphe',
         texte:
-          "J'ai revu le design system pour harmoniser les interfaces et faciliter les futures évolutions de l'application. La mise en place de design tokens, de composants cohérents et de règles de documentation a permis de poser une base commune pour les prochains changements et ajouts de fonctionnalités, avec une attention particulière à l'accessibilité.",
+          "J'ai revu le design system pour harmoniser les interfaces et faciliter les futures évolutions de l'application. La mise en place de design tokens, de composants cohérents et de documentation a permis de poser une base commune pour les prochains changements et ajouts de fonctionnalités, avec une attention particulière sur l'accessibilité.",
       },
       { type: 'sous-titre', texte: 'Valider les choix de conception sans tests utilisateurs classiques' },
       { type: 'paragraphe',
@@ -70,7 +70,9 @@ export const projects: Projet[] = [
     ],
     resultat: [
       { type: 'liste',
-        items: ["Le projet a contribué à améliorer les parcours de souscription et la lisibilité du back-office pour les conseillers.","La création du design system a permis d'harmoniser les interfaces, de mieux intégrer les règles d'accessibilité et de poser une base commune pour les futures évolutions du produit.","100 % de satisfaction sur les retours recueillis lors des tests du nouveau design auprès des conseillers." ] },
+        items: ["Le projet a contribué à améliorer les parcours de souscription et la lisibilité du back-office pour les conseillers.",
+                "L'optimisation du design system a permis d'harmoniser les interfaces, de mieux intégrer les règles d'accessibilité et de poser une base commune pour les futures évolutions du produit.",
+                "100 % de satisfaction sur les retours recueillis lors des tests du nouveau design auprès des conseillers." ] },
     ],
     image: '/images/projects/mac1.png',
     premierPlan: [
@@ -89,33 +91,33 @@ export const projects: Projet[] = [
     ],
     liens: [{ label: 'Voir le prototype', url: 'https://example.com/kaya' }],
     dialogue: [
-      "Kaya, c'est mon projet préféré : on est passés de 40% à 68% de complétion sur l'onboarding !",
-      "Le plus dur ? Convaincre l'équipe de supprimer 3 écrans entiers. Spoiler : ça a marché.",
+      "Score d’accessibilité au départ : 0%. \n Alex a repris les fondamentaux et dépassé les 50%.",
+      "Moi, j’avais proposé un bouton « Activer l’accessibilité ». Apparemment, ça ne fonctionne pas comme ça. Dommage, c’était plus rapide. 🤷‍♂️",
     ],
-    nouveau: true,
+    nouveau: false,
   },
   {
     id: 'Recouvrement',
-    titre: 'Outil de recouvrement',
+    titre: 'Repenser le traitement des dossiers de recouvrement',
     categorie: 'web',
     client: 'Orange',
     annee: 2023,
     competences: [
       { label: 'Agilité', couleur: 'coral' },
-      { label: 'Tests utilisateurs', couleur: 'turquoise' },
-      { label: 'Ateliers d\'idéation', couleur: 'sun' },
+      { label: 'Tests utilisateurs', couleur: 'coral' },
+      { label: 'Ateliers d\'idéation', couleur: 'coral' },
     ],
     fonction: 'Product Designer',
     contexte: [
       {
         type: 'paragraphe',
         texte:
-          "Orange a engagé la refonte d'un outil interne de recouvrement, utilisé par plusieurs équipes pour traiter des dossiers soumis à des règles métier et à des contraintes réglementaires. Chaque dossier passe par différentes étapes et plusieurs équipes, avec leurs propres processus de validation.",
+          "Chez Orange, le recouvrement mobilise plusieurs équipes qui interviennent successivement sur un même dossier, chacune avec ses propres règles et processus de validation.",
       },
       {
         type: 'paragraphe',
         texte:
-          "La mission devait faciliter le suivi des dossiers et la prise de décision des conseillers, tout en répondant aux exigences de sécurité, de maintenance et d'intégration au système d'information.",
+          "La refonte de l'outil devait faciliter le suivi des dossiers et la prise de décision des conseillers, tout en respectant les contraintes métier et techniques.",
       },
     ],
     monRole: [
@@ -127,7 +129,7 @@ export const projects: Projet[] = [
       {
         type: 'paragraphe',
         texte:
-          "Mon rôle consistait à garantir la cohérence des parcours et des maquettes, à faire converger les propositions et à maintenir une vision partagée du produit entre les métiers, le design et la technique.",
+          "Il s’agissait de garantir la cohérence des parcours et des maquettes, de faire converger les propositions et de maintenir une vision partagée du produit entre les métiers, le design et la technique.",
       },
     ],
     demarche: [
@@ -135,13 +137,13 @@ export const projects: Projet[] = [
       {
         type: 'paragraphe',
         texte:
-          "Lorsqu'un conseiller intervient sur un dossier de recouvrement, plusieurs actions ont déjà été menées par d'autres équipes. J'ai repensé la présentation des informations pour rendre l'historique des interventions accessible et permettre aux conseillers de comprendre rapidement la situation avant de prendre une décision.",
+          "Lorsqu'un conseiller intervient sur un dossier de recouvrement, celui-ci est souvent déjà passé entre les mains de plusieurs équipes. J'ai repensé la présentation de l'historique pour aider le conseiller à comprendre rapidement les étapes du dossier et à prendre les bonnes décisions.",
       },
       { type: 'sous-titre', texte: "Adapter les actions aux différentes étapes du recouvrement" },
       {
         type: 'paragraphe',
         texte:
-          "Chaque étape du dossier implique des règles métier et des processus de validation spécifiques. J'ai travaillé à leur intégration dans les parcours pour conditionner l'accès à certaines actions selon l'avancement du dossier et l'équipe concernée, et ainsi mieux guider les conseillers dans leur traitement et ainsi limiter les erreurs de traitement.",
+          "Chaque étape du dossier implique des règles métier et des processus de validation spécifiques. J'ai intégré ces règles dans les parcours pour adapter les actions disponibles selon l'état du dossier et de l'équipe concernée, afin de guider les conseillers et de limiter les erreurs.",
       },
       { type: 'sous-titre', texte: "Construire une expérience cohérente entre plusieurs équipes" },
       {
@@ -154,7 +156,7 @@ export const projects: Projet[] = [
       {
         type: 'liste',
         items: [
-          "La refonte a permis de simplifier la navigation et de faciliter la prise en main de l'outil par les équipes métier.",
+          "La refonte a permis d'améliorer la lisibilité de l'outil et de faciliter sa prise en main par les équipes métier.",
           "Des gains en équivalents temps plein (ETP) ont été mesurés à la suite de la refonte.",
           "Le travail de co-construction a également permis d'identifier et de mieux formaliser plusieurs règles métier jusque-là implicites ou dispersée",
         ],
@@ -176,19 +178,19 @@ export const projects: Projet[] = [
       },
     ],
     liens: [{ label: 'Voir le site', url: 'https://example.com/lumen' }],
-    dialogue: [
-      'Pour Lumen, on voulait un site qui respire — beaucoup de blanc, des formes organiques.',
+    dialogue: [ "L’interface de recouvrement avait un petit air des années 90. 🕺🕺 \n Alex l’a remise au goût du jour, sans perdre l’historique des dossiers.",
+                "Une mise à jour qui n’efface pas le passé. \n Pratique, pour du recouvrement.",
     ],
   },
   {
     id: 'Maia',
-    titre: 'Assistant virtuel basé sur l’intelligence artificielle',
+    titre: 'Concevoir un assistant IA pour les conseillers',
     categorie: 'web',
     client: 'Orange',
     annee: 2022,
     competences: [
-      { label: 'Itérations rapides', couleur: 'sun' },
-      { label: 'IA conversationnelle', couleur: 'turquoise' },
+      { label: 'Itérations rapides', couleur: 'coral' },
+      { label: 'IA conversationnelle', couleur: 'coral' },
       { label: 'Design System', couleur: 'coral' },
     ],
     fonction: 'Product Designer',
@@ -196,52 +198,49 @@ export const projects: Projet[] = [
       {
         type: 'paragraphe',
         texte:
-          'Orange souhaitait tester, avec le POC MAIA, un outil IA destiné aux conseillers en centre d’appel. L’objectif était de connecter l’assistant à BASIC, l’outil existant centralisant les procédures, les fiches produits et les marches à suivre que les conseillers doivent transmettre aux clients.',
+          "Orange souhaitait expérimenter un assistant IA pour aider ses conseillers en centre d'appel à retrouver plus rapidement les informations nécessaires aux échanges clients. La documentation interne, volumineuse et parfois redondante ou obsolète, rendait les recherches longues et l'identification de la bonne information difficile.",
       },
       {
         type: 'paragraphe',
         texte:
-          'La recherche dans BASIC était peu performante et prenait beaucoup de temps. L’outil contient un très grand nombre d’entrées, parfois mal indexées, avec des doublons et des contenus obsolètes qui continuent d’apparaître dans les recherches classiques. Pour un conseiller en appel, cela allonge le temps de réponse côté client et crée surtout le risque de s’appuyer sur une information incomplète ou incorrecte.',
+          "Le but de la mission était de faciliter l'accès à une information pertinente et fiable pendant les appels, sans ajouter de complexité à des interfaces de travail déjà chargées.",
       },
     ],
     monRole: [
       {
         type: 'paragraphe',
         texte:
-          'J’ai travaillé sur la conception de l’expérience utilisateur du chatbot IA, avec comme enjeu principal de rendre l’assistant utile pendant l’appel, sans ajouter une couche de complexité à un écran de travail déjà très dense.',
-      },
-      {
-        type: 'paragraphe',
-        texte:
-          'Mon rôle consistait aussi à poser les premiers principes d’usage d’un chatbot IA pour les outils conseillers chez Orange. Il fallait définir où l’assistant devait apparaître, comment il devait se comporter pendant l’appel, à quels moments il devait se rétracter, et comment laisser la main au conseiller sans gêner son travail.',
+          "J'ai travaillé sur la conception UX de l'assistant IA, avec pour enjeu de l'intégrer aux outils existants sans perturber le travail des conseillers. J'ai également contribué à définir les premiers principes d'interaction avec l'IA : sa place dans l'interface, son comportement pendant un appel et les moments où il devait s'effacer pour ne pas gêner le travail du conseiller.",
       },
     ],
     demarche: [
+      { type: 'sous-titre', texte: "Rendre l'information accessible au bon moment" },
       {
         type: 'paragraphe',
         texte:
-          'Le projet s’est construit par itérations, dans un contexte où les équipes découvraient encore les possibilités et les limites de l’IA. Cela a demandé d’ajuster la conception au fur et à mesure des tests et des retours.',
+          "J'ai travaillé sur la manière de faire apparaître les informations issues de la documentation interne au moment où le conseiller en a besoin. L'enjeu était de limiter les recherches et les interruptions pendant l'appel, tout en laissant au conseiller la liberté d'utiliser ou non l'assistant.",
       },
+      { type: 'sous-titre', texte: "Intégrer une assistance visible sans être intrusive" },
       {
-        type: 'liste',
-        items: [
-          'Comment faire remonter en temps réel les informations pertinentes issues de BASIC ?',
-          'Comment éviter que le chatbot masque des informations importantes à l’écran ?',
-          'Comment proposer une aide visible sans devenir intrusive ?',
-          'Comment favoriser l’adoption par des conseillers déjà habitués à leurs outils et à leurs propres méthodes de recherche ?',
-        ],
+        type: 'paragraphe',
+        texte:
+          "Les conseillers utilisent déjà plusieurs fonctionnalités au sein d'une même interface. J'ai étudié comment rendre l'assistant facilement accessible, tout en lui permettant de s'effacer lorsqu'il n'est pas nécessaire. L'objectif était de préserver la lisibilité de l'écran et de laisser le conseiller libre de ses actions.",
+      },
+      { type: 'sous-titre', texte: "Adapter la conception aux possibilités de l'IA" },
+      {
+        type: 'paragraphe',
+        texte:
+          "Le projet s'est construit par itérations, à mesure que les équipes exploraient les possibilités et les limites de l'IA. J'ai fait évoluer les propositions d'interface en fonction des tests et des retours recueillis, afin de trouver un équilibre entre l'assistance proposée et le contrôle laissé à l'utilisateur.",
       },
     ],
     resultat: [
       {
-        type: 'paragraphe',
-        texte:
-          'Le chatbot a été mis en test. Le design a été validé, tandis que la pertinence des réponses proposées par l’IA devait encore être améliorée et évaluée dans les tests suivants.',
-      },
-      {
-        type: 'paragraphe',
-        texte:
-          'Les utilisateurs ont identifié un vrai intérêt au projet. Lorsque les réponses de l’IA étaient pertinentes, le taux de satisfaction des téléconseillers atteignait 100 %. Le projet a également permis de poser un premier standard d’expérience pour l’intégration d’un assistant IA dans les outils conseillers Orange.',
+        type: 'liste',
+        items: [
+          "Le design de l'assistant a été validé et le POC mis en test auprès des conseillers.",
+          "Le taux de satisfaction des conseillers atteignait 100 % lorsque les réponses de l'IA étaient pertinentes. La qualité de ces réponses restait toutefois un axe d'amélioration pour la suite des tests.",
+          "Le projet a permis de définir les premiers principes d'expérience utilisateur pour l'intégration d'assistants IA dans les outils conseillers d'Orange.",
+        ],
       },
     ],
     image: '/images/projects/flow-dashboard.webp',
@@ -259,64 +258,77 @@ export const projects: Projet[] = [
         profondeur: 24,
       },
     ],
-    dialogue: ['Des graphiques, encore des graphiques… et pourtant, zéro utilisateur perdu !'],
+    dialogue: [ "Premier protocole de test avec de l’IA pour Alex. 😱 Spoiler : côté méthode, rien ne change vraiment. Il faut toujours observer et écouter les utilisateurs.",
+                "Décevant pour les robots, rassurant pour les humains, n'est-ce pas ? 😉 "],
   },
   {
     id: 'Suivi-Commande',
-    titre: 'Outil de suivi de commande',
+    titre: 'Réunir le suivi des commandes dans une seule interface',
     categorie: 'web',
     client: 'Orange',
     annee: 2021,
     competences: [
       { label: 'UX Research', couleur: 'coral' },
-      { label: 'Parcours utilisateur', couleur: 'turquoise' },
-      { label: 'Design d\'interface', couleur: 'sun' },
+      { label: 'Parcours utilisateur', couleur: 'coral' },
+      { label: 'Design d\'interface', couleur: 'coral' },
     ],
     fonction: 'Product Designer',
     contexte: [
       {
         type: 'paragraphe',
         texte:
-          'Orange disposait de deux outils de suivi de commande : l’un pour les commandes mobile, l’autre pour les commandes internet. Cette séparation créait des situations peu efficaces pour les conseillers, notamment lorsqu’un client appelait pour une commande hybride, par exemple un pack internet + mobile. Dans ce type de cas, le conseiller devait passer d’un outil à l’autre pour retrouver les informations liées à la commande et répondre au client.',
+          "Lorsqu'un client contactait Orange au sujet d'une commande combinant forfait mobile et offre internet, le conseiller devait naviguer entre deux outils pour retrouver les informations nécessaires. Cela pouvait aussi compliquer le travail des autres services, notamment lorsqu'il fallait comprendre un incident de livraison ou traiter une réclamation.",
       },
       {
         type: 'paragraphe',
         texte:
-          'L’objectif était donc de créer un outil unique permettant de suivre l’ensemble du processus, de la phase de commande jusqu’à la livraison.',
+          "La mission visait à créer un outil unique offrant une vision globale et détaillée de chaque commande, de la souscription jusqu'à la livraison, pour faciliter les réponses aux clients et la coordination en interne.",
       },
     ],
     monRole: [
       {
         type: 'paragraphe',
         texte:
-          'J’ai travaillé sur la conception UX du nouvel outil, avec comme enjeu principal de simplifier l’expérience des téléconseillers et de leur permettre d’accéder plus rapidement aux informations utiles pendant l’appel.',
-      },
-      {
-        type: 'paragraphe',
-        texte:
-          'Mon rôle a été de proposer une interface capable de répondre aux besoins de deux typologies de conseillers, déjà habitués à des outils, des logiques d’usage et des affichages différents. Il fallait trouver des écrans communs, sans privilégier uniquement les habitudes d’un groupe au détriment de l’autre.',
+          "J'ai travaillé sur la conception UX du nouvel outil, de la structuration des parcours à la hiérarchisation des informations. En lien avec les équipes métier et de développement, j'ai proposé une organisation des interfaces répondant aux besoins des différents services, tout en tenant compte des contraintes techniques du projet.",
       },
     ],
     demarche: [
+      { type: 'sous-titre', texte: "Organiser l'information pour une lecture globale et détaillée" },
       {
         type: 'paragraphe',
         texte:
-          'Le travail de design a porté sur la simplification des écrans et la hiérarchisation des informations. L’objectif était que le conseiller puisse identifier rapidement l’état d’une commande, son avancement et les informations prioritaires à communiquer au client.',
+          "J'ai travaillé sur la hiérarchisation des informations pour permettre aux utilisateurs de visualiser rapidement l'état d'une commande, tout en accédant aux détails des différentes étapes lorsque nécessaire.",
       },
       {
         type: 'paragraphe',
         texte:
-          'Un des enjeux importants concernait l’affichage des données. Les marges de manœuvre techniques étant limitées, il a fallu travailler étroitement avec les équipes de développement pour améliorer l’interface sans refonte technique. Nous nous sommes notamment appuyés sur des solutions déjà mises en place par d’autres équipes sur d’autres projets.',
+          "Un exemple, l’intégration d’une carte géographique permet de localiser les livraisons et les interventions techniques, grâce à des informations actualisées à intervalles réguliers.",
+      },
+      { type: 'sous-titre', texte: "Faciliter le travail entre les services" },
+      {
+        type: 'paragraphe',
+        texte:
+          "Au-delà des conseillers, l'outil devait permettre aux différents services de comprendre la situation d'une commande pour mieux coordonner leurs interventions.",
+      },
+      {
+        type: 'paragraphe',
+        texte:
+          "Par exemple, lors du traitement d'une réclamation, le service technique peut consulter les informations liées à la livraison, identifier un retard causé par un incident du transporteur et avertir le client.",
+      },
+      { type: 'sous-titre', texte: "Composer avec les contraintes techniques existantes" },
+      {
+        type: 'paragraphe',
+        texte:
+          "Les outils historiques devaient rester opérationnels jusqu'à ce que le nouvel outil soit suffisamment testé et stabilisé pour les remplacer. J'ai travaillé avec les équipes de développement en m'appuyant notamment sur des solutions déjà utilisées dans d'autres projets Orange, pour concevoir une interface cohérente tout en respectant les contraintes de cette transition.",
       },
     ],
     resultat: [
       {
         type: 'liste',
         items: [
-          'Réunion du suivi des commandes dans une seule interface, avec une lecture plus claire du parcours client.',
-          'Vue plus moderne, notamment avec l’intégration d’une carte permettant de suivre l’état de la commande en quasi temps réel.',
-          'Écrans simplifiés pour rendre les informations importantes plus accessibles aux conseillers, avec un effet sur la qualité de réponse et la satisfaction client.',
-          'Bénéfice indirect : renforcement de l’harmonie entre différents outils métier Orange, en réutilisant des solutions déjà conçues ailleurs dans l’écosystème.',
+          "Unification du suivi des commandes de forfaits mobiles et d'offres internet dans un outil unique.",
+          "Une consultation globale et détaillée des commandes, facilitant l'accès aux informations et la coordination entre services.",
+          "Réutilisation de solutions existantes, contribuant à harmoniser les interfaces des différents outils métier d'Orange.",
         ],
       },
     ],
@@ -329,63 +341,72 @@ export const projects: Projet[] = [
         profondeur: 24,
       },
     ],
-    dialogue: ["Nomad m'a appris à designer pour le offline-first. Un vrai casse-tête sympa."],
+    dialogue: [ "Alex marmonne « Des boîtes dans des boîtes… » et sort une maquette quasi finie en plein atelier. ",
+                "J’ai ouvert un ticket pour activité suspecte. \n Réponse : « C’est juste du design. » Je refuse de clôturer ce ticket."],
   },
-{
+  {
     id: 'Eligibilite',
-    titre: 'Outil d’éligibilité',
+    titre: "Fiabiliser l'éligibilité aux offres grâce à une localisation plus précise",
     categorie: 'web',
     client: 'Orange',
     annee: 2024,
     competences: [
-      { label: 'UX Design', couleur: 'turquoise' },
+      { label: 'UX Design', couleur: 'coral' },
       { label: 'Agilité', couleur: 'coral' },
-      { label: 'Prototypage', couleur: 'sun' },
+      { label: 'Prototypage', couleur: 'coral' },
     ],
     fonction: 'Product Designer',
     contexte: [
       {
         type: 'paragraphe',
         texte:
-          'Orange disposait d’un outil métier permettant aux conseillers de tester les offres disponibles en fonction de l’adresse du client. Dans certains cas, l’adresse ne suffisait pas à donner un résultat assez précis, ce qui pouvait générer des erreurs d’éligibilité ou des incertitudes sur les offres réellement disponibles.',
+          "Pour déterminer les offres disponibles à une adresse, les conseillers d'Orange utilisent un outil de test d'éligibilité. Dans certaines situations, l'adresse seule ne permettait pas une localisation suffisamment précise, pouvant entraîner des erreurs sur les offres proposées.",
       },
       {
         type: 'paragraphe',
         texte:
-          'Le besoin était donc d’obtenir une localisation plus fine, sans alourdir le parcours du conseiller ni demander au client une manipulation complexe.',
+          "L'objectif de la mission était d'améliorer la précision des tests d'éligibilité sans complexifier le travail des conseillers ni demander de manipulations contraignantes aux clients.",
       },
     ],
     monRole: [
       {
         type: 'paragraphe',
         texte:
-          'J’ai travaillé sur la recherche de solution et la conception UX du nouveau parcours. L’enjeu était de trouver un moyen simple d’obtenir une géolocalisation plus précise, puis de l’intégrer dans l’outil métier déjà utilisé par les conseillers.',
+          "J'ai travaillé sur la recherche d'une solution et la conception UX d'un nouveau parcours permettant d'obtenir une localisation plus précise.",
       },
       {
         type: 'paragraphe',
         texte:
-          'Mon rôle portait donc sur la conception de l’interface et, en amont, sur la manière de résoudre le problème d’usage : comment obtenir la localisation, comment la faire valider par le client, et comment réintégrer le résultat dans le test d’éligibilité.',
+          "Mon rôle consistait à imaginer une interaction simple entre le conseiller et le client, puis à l'intégrer dans l'outil métier existant, sans interrompre le processus de vérification d'éligibilité.",
       },
     ],
     demarche: [
+      { type: 'sous-titre', texte: "Exploiter le téléphone du client pour préciser sa localisation" },
       {
         type: 'paragraphe',
         texte:
-          'La phase d’idéation a permis d’aboutir à une solution simple : utiliser le téléphone portable du client. Le conseiller pouvait envoyer un SMS contenant un lien, permettant au client de transmettre sa position GPS exacte à Orange.',
+          "La phase d'idéation a conduit à une solution : permettre au conseiller d'envoyer un SMS contenant un lien, grâce auquel le client peut transmettre sa position GPS directement depuis son téléphone. Cette approche permet d'obtenir une localisation plus précise sans multiplier les questions ou les échanges avec le conseiller.",
       },
+      { type: 'sous-titre', texte: "Concevoir un parcours simple des deux côtés" },
       {
         type: 'paragraphe',
         texte:
-          'Le travail de design a ensuite permis d’intégrer cette solution dans le parcours existant. Il fallait que le conseiller puisse déclencher la demande en une ou deux étapes maximum, que le client comprenne immédiatement ce qu’il devait faire, et que le résultat de la géolocalisation revienne dans l’outil sans créer de procédure parallèle.',
+          "J'ai travaillé sur la réduction des étapes nécessaires pour déclencher et effectuer la géolocalisation. Le conseiller devait pouvoir envoyer la demande en une ou deux étapes, tandis que le client devait comprendre immédiatement comment partager sa position, sans manipulation complexe.",
+      },
+      { type: 'sous-titre', texte: "Intégrer la géolocalisation au parcours existant" },
+      {
+        type: 'paragraphe',
+        texte:
+          "J'ai conçu le parcours pour que la position transmise par le client soit directement récupérée dans l'outil d'éligibilité. L'enjeu était de permettre au conseiller de poursuivre son travail sans changer d'interface ni engager de procédure supplémentaire.",
       },
     ],
     resultat: [
       {
         type: 'liste',
         items: [
-          'Le conseiller peut désormais déclencher la demande rapidement, et le client transmettre sa position en un clic.',
-          'En quelques secondes, la géolocalisation peut être récupérée et intégrée dans l’outil d’éligibilité.',
-          'Réduction des erreurs liées à une localisation trop imprécise, tout en gardant un parcours simple pour le conseiller et pour le client.',
+          "Une demande de géolocalisation rapide à déclencher pour le conseiller, avec un partage de position en un clic côté client.",
+          "Une localisation récupérée en quelques secondes et directement intégrée au test d'éligibilité.",
+          "Une réduction des erreurs liées à l'imprécision des adresses, tout en conservant un parcours simple pour le conseiller et le client.",
         ],
       },
     ],
@@ -398,61 +419,67 @@ export const projects: Projet[] = [
         profondeur: 24,
       },
     ],
-    dialogue: ["Nomad m'a appris à designer pour le offline-first. Un vrai casse-tête sympa."],
+    dialogue: ["Parfois, la solution est à portée de main... Littéralement.","Alex a conçu le parcours en deux semaines au lieu de deux mois. Speedy Gonz'Alex. ⚡⚡"],
   },
-{
+  {
     id: 'Design-system',
-    titre: 'Design system outils métiers',
+    titre: 'Faire évoluer le design system pour les outils métier',
     categorie: 'web',
     client: 'Orange',
     annee: 2021,
     competences: [
       { label: 'UI Design', couleur: 'coral' },
-      { label: 'Documentation', couleur: 'turquoise' },
-      { label: 'Gouvernance', couleur: 'sun' },
+      { label: 'Documentation', couleur: 'coral' },
+      { label: 'Gouvernance', couleur: 'coral' },
     ],
     fonction: 'Product Designer',
     contexte: [
       {
         type: 'paragraphe',
         texte:
-          'Le design system d’Orange était principalement pensé pour des interfaces grand public. Les outils métier répondent, eux à d’autres contraintes : écrans souvent plus denses, informations plus nombreuses, espaces d’affichage réduits et besoins d’efficacité pour les conseillers.',
+          "Le design system d'Orange était principalement conçu pour les interfaces grand public. Les outils utilisés par les conseillers répondaient à d'autres contraintes : davantage d'informations à afficher, des écrans plus denses et des besoins spécifiques aux activités métier.",
       },
       {
         type: 'paragraphe',
         texte:
-          'Il a donc été décidé de créer un fork du design system existant. Ce design system spécifique métier devait conserver une cohérence avec l’expérience Orange globale tout en répondant aux usages spécifiques des interfaces métier.',
+          "Le but de la mission était de créer un fork du design system existant et l'adapter aux outils métier tout en conservant une cohérence avec l'expérience Orange globale.",
       },
     ],
     monRole: [
       {
         type: 'paragraphe',
         texte:
-          'J’ai travaillé sur l’adaptation du design system pour les outils conseiller, avec comme enjeu principal de rendre les composants utilisables dans des écrans plus fournis, sans perdre en lisibilité.',
-      },
-      {
-        type: 'paragraphe',
-        texte:
-          'Mon rôle consistait à revoir plusieurs principes d’interface, notamment les espacements, les tailles typographiques et certains comportements de composants, afin de mieux les adapter aux contraintes des outils métier.',
+          "J'ai posé les bases du design system métier en adaptant les composants fondamentaux, en créant leur documentation et en réalisant des tests de non-régression. J'ai ensuite contribué à son enrichissement, en échangeant avec les équipes projet et celle du design system grand public pour identifier les besoins et faire évoluer la bibliothèque de composants.",
       },
     ],
     demarche: [
+      { type: 'sous-titre', texte: "Adapter les composants aux contraintes des outils métier" },
       {
         type: 'paragraphe',
         texte:
-          'Le travail a porté sur une librairie de composants importante, qu’il a fallu adapter sans créer de rupture avec le design system existant. Chaque ajustement devait être pensé à l’échelle du système : un changement de taille, d’espacement pouvait avoir un impact sur plusieurs écrans et plusieurs outils. Il fallait donc garantir la cohérence de l’ensemble, pas seulement corriger les composants au cas par cas.',
+          "J'ai retravaillé les espacements, les tailles typographiques et certains comportements des composants pour répondre aux besoins d'interfaces plus denses, sans compromettre leur lisibilité. Chaque modification devait être pensée à l'échelle du système pour préserver la cohérence des composants et leur fonctionnement dans les différents outils.",
+      },
+      { type: 'sous-titre', texte: "Enrichir la bibliothèque à partir des usages réels" },
+      {
+        type: 'paragraphe',
+        texte:
+          "Les échanges avec les équipes projet ont permis d'identifier de nouveaux besoins et de concevoir des composants adaptés aux usages métier. Par exemple, l'ajout d'un sélecteur de dates (date picker) a permis de proposer une alternative aux champs de saisie classiques. D'autres composants, comme certains sliders, répondaient à des besoins plus spécifiques aux outils métier.",
+      },
+      { type: 'sous-titre', texte: "Faire évoluer les composants entre les deux design systems" },
+      {
+        type: 'paragraphe',
+        texte:
+          "J'ai travaillé avec l'équipe du design system grand public pour évaluer la pertinence des nouveaux composants au-delà des outils métier. Certains, comme le date picker, ont ainsi été intégrés au système grand public. Cette collaboration a contribué à faire évoluer les pratiques vers une conception des nouveaux composants prenant en compte dès le départ leurs déclinaisons grand public et métier.",
       },
     ],
     resultat: [
       {
-        type: 'paragraphe',
-        texte:
-          'Le design system, initialement prévu pour les outils métier en France, a ensuite été repris pour les interfaces métier au niveau international.',
-      },
-      {
-        type: 'paragraphe',
-        texte:
-          'Le projet a permis de créer une meilleure continuité entre l’expérience grand public Orange et les outils utilisés par les conseillers, tout en tenant compte des contraintes propres aux interfaces métier.',
+        type: 'liste',
+        items: [
+          "Création d'un design system métier documenté, ensuite repris pour les outils métier d'Orange à l'international.",
+          "Enrichissement des bibliothèques de composants métier et grand public, avec davantage de possibilités pour concevoir de futures interfaces.",
+          "Évolution des pratiques de conception, avec des composants désormais pensés dans leurs déclinaisons grand public et métier dès leur création.",
+        ],
       },
     ],
     image: '/images/projects/nomad-app.webp',
@@ -464,6 +491,7 @@ export const projects: Projet[] = [
         profondeur: 24,
       },
     ],
-    dialogue: ["Nomad m'a appris à designer pour le offline-first. Un vrai casse-tête sympa."],
+    dialogue: [ "Avec ce projet, Alex a posé les bases du design system métier d’Orange. Quelques composants se sont ensuite invités côté grand public.", 
+                "Et le système ? Carrément repris à l’international ! \n Ses pixels voyagent plus que lui. 😂😂 "],
   },
 ];

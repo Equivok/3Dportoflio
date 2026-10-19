@@ -86,7 +86,7 @@ export function CvPage() {
         />
       </div>
 
-      <div className="mx-auto h-screen flex flex-col w-full flex-1 items-center px-4 pb-48 pt-6 sm:px-6 lg:pt-20">
+      <div className="mx-auto flex flex-col w-full flex-1 items-center px-4 pb-48 pt-6 sm:px-6 lg:pt-30">
         <div className="flex items-center h-full max-w-7xl w-full rounded-20">
           <AnimatePresence mode="wait">
             <motion.div
@@ -110,7 +110,7 @@ export function CvPage() {
                     visuel radar est affiché en grand dans son propre bloc. */}
 
 
-                <h2 className="text-left font-menu text-2xl text-ink-900 pr-20 sm:pr-24 lg:pr-0">{entree.title}</h2>
+                <h2 className="text-left font-menu text-2xl font-bold text-ink-900 pr-20 sm:pr-24 lg:pr-0">{entree.title}</h2>
                 <hr className="my-4 border-grey"></hr>
                 <p className="mt-2 font-menu text-xl text-coral-600">{entree.fonction}</p>
                 <p className="mt-1 text-base text-ink-700">{entree.client}</p>

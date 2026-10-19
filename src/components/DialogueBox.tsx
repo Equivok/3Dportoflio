@@ -21,7 +21,7 @@ interface DialogueBoxProps {
  * Tant qu'une image n'est pas encore fournie, elle se replie sur "neutre".
  */
 const AVATAR_PAR_EXPRESSION: Record<Expression, string> = {
-  neutre: '/images/Avatar/neutre.png',
+  neutre: '/images/Avatar/Agent/costume.png',
   content: '/images/Avatar/content.png',
   mechant:'/images/Avatar/mechant.png',
   montrer: '/images/Avatar/Agent/montrer.png',
@@ -90,7 +90,7 @@ export function DialogueBox({ flowId, repliques, avatarSrc }: DialogueBoxProps) 
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 24 }}
         transition={{ duration: 0.3 }}
-        className="fixed inset-x-0 bottom-4 z-40 hidden justify-center px-4 sm:bottom-8 md:flex"
+        className="fixed inset-x-0 bottom-4 z-40 hidden justify-center whitespace-pre-line px-4 sm:bottom-8 md:flex"
       >
         <div className="relative w-full max-w-xl">
           {/* Portrait débordant en haut à gauche */}
@@ -125,7 +125,7 @@ export function DialogueBox({ flowId, repliques, avatarSrc }: DialogueBoxProps) 
             aria-describedby="dialogue-texte-visuel"
             onClick={avancer}
             onKeyDown={gererClavier}
-            className="cursor-pointer rounded-blob bg-cream-50 py-5 pl-24 pr-14 shadow-soft ring-1 ring-ink-900/5 sm:pl-28"
+            className="cursor-pointer rounded-20 bg-cream-50 py-5 pl-24 pr-14 shadow-soft ring-1 ring-ink-900/5 sm:pl-28"
           >
             {/* Texte complet, accessible aux lecteurs d'écran */}
             <p className="sr-only" aria-live="polite">

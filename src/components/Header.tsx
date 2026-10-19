@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom';
-import { motion } from 'framer-motion';
 
 const LIENS = [
   { to: '/projets', label: 'Projets' },
@@ -29,14 +28,10 @@ export function Header() {
               {({ isActive }) => (
                 <>
                   {isActive && (
-                    <motion.span
-                      layoutId="pilule-active"
-                      className="absolute inset-0 -z-10 rounded-pill bg-coral-500 shadow-pop"
-                      transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-                    />
+                    <span className="absolute inset-0 -z-10 rounded-pill bg-coral-500 shadow-pop" />
                   )}
                   <span className={isActive ? 'text-white' : 'text-coral-600'}>A</span>
-                  <span className={isActive ? 'text-white' : 'text-ink-900'}>GRANDJEAN</span>
+                  <span className={isActive ? 'text-ink-900' : 'text-ink-900'}>GRANDJEAN</span>
                 </>
               )}
             </NavLink>
@@ -48,7 +43,7 @@ export function Header() {
                 end={lien.to === '/'}
                 className={({ isActive }) =>
                   [
-                    'relative block rounded-pill px-2 py-2 text-center font-menu uppercase tracking-wide transition-colors sm:px-4 text-base',
+                    'relative block rounded-pill px-2 py-2 text-center font-menu font-bold tracking-wide sm:px-4 text-base',
                     isActive
                       ? 'text-white'
                       : 'text-ink-700 hover:bg-cream-200 hover:text-coral-600',
@@ -58,11 +53,7 @@ export function Header() {
                 {({ isActive }) => (
                   <>
                     {isActive && (
-                      <motion.span
-                        layoutId="pilule-active"
-                        className="absolute inset-0 -z-10 rounded-pill bg-coral-500 shadow-pop"
-                        transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-                      />
+                      <span className="absolute inset-0 -z-10 rounded-pill bg-coral-500 shadow-pop" />
                     )}
                     {lien.label}
                   </>

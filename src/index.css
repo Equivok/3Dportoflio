@@ -26,7 +26,7 @@
   --color-turquoise-600: #158f7e;
 
   --color-ink-500: #4a3b3a;
-  --color-ink-700: #2c2220;
+  --color-ink-700: #3e434a;
   --color-ink-900: #1b1414;
 
   --color-sun-300: #ffd166;
@@ -79,7 +79,7 @@ h1{font-family: var(--font-menu)}
 h2,
 h3 {
   font-family: var(--font-menu);
-  color: var(--color-ink-900);
+  color: var(--color-ink-700);
 }
 
 button {
@@ -169,7 +169,7 @@ button {
   background-color: rgb(255, 255, 255, 1);
 }
 .bg-dark{
-  background-color: #3e434a;
+  background-color: var(--color-ink-700);
   background-repeat: repeat;
 }
 
