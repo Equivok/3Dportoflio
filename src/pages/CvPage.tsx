@@ -86,7 +86,8 @@ export function CvPage() {
         />
       </div>
 
-      <div className="mx-auto flex flex-col w-full flex-1 items-center px-4 pb-48 pt-6 sm:px-6 lg:pt-30">
+      <div className="mx-auto flex flex-col w-full flex-1 items-center px-4 pb-4 pt-6 sm:px-6 lg:pt-30">
+
         <div className="flex items-center h-full max-w-7xl w-full rounded-20">
           <AnimatePresence mode="wait">
             <motion.div
@@ -103,47 +104,57 @@ export function CvPage() {
                   droite pour déborder légèrement au-dessus. Dès lg, ce bloc
                   reprend sa place à gauche, le visuel radar étant alors
                   affiché séparément à droite (voir bloc suivant). */}
-              <div className="relative order-1 rounded-20 bg-white p-6 shadow-soft sm:p-10 lg:order-1">
-                {/* Avatar/radar mobile uniquement : positionné en haut à
-                    droite du bloc, légèrement décalé vers le haut pour
-                    ressortir au-dessus de la carte. Masqué dès lg, où le
-                    visuel radar est affiché en grand dans son propre bloc. */}
+              <div className="flex flex-col">
+                {/* Bloc de téléchargement du CV : même apparence que le bloc
+                    d'expérience ci-dessous (fond blanc, coins arrondis, ombre),
+                    affiché au-dessus que ce soit en mobile ou en desktop. */}
+                <div className="mb-6 flex w-full max-w-7xl items-center justify-between rounded-20 bg-white p-6 shadow-soft sm:p-10">
+                  <p className="mt-1 text-base font-bold text-ink-700">Télécharger le CV en format .PDF</p>
+                  <a href="/cv/CV-Alexandre-Grandjean.pdf" download className="flex items-center gap-2 rounded-pill bg-coral-500 px-6 py-3 font-menu text-base text-white shadow-pop transition-colors hover:bg-coral-600"> 
+                    <span aria-hidden="true">⬇</span><span>Télécharger</span>
+                  </a>
+                </div>
+                <div className="relative order-1 rounded-20 bg-white p-6 shadow-soft sm:p-10 lg:order-1">
+                  {/* Avatar/radar mobile uniquement : positionné en haut à
+                      droite du bloc, légèrement décalé vers le haut pour
+                      ressortir au-dessus de la carte. Masqué dès lg, où le
+                      visuel radar est affiché en grand dans son propre bloc. */}
 
 
-                <h2 className="text-left font-menu text-2xl font-bold text-ink-900 pr-20 sm:pr-24 lg:pr-0">{entree.title}</h2>
-                <hr className="my-4 border-grey"></hr>
-                <p className="mt-2 font-menu text-xl text-coral-600">{entree.fonction}</p>
-                <p className="mt-1 text-base text-ink-700">{entree.client}</p>
-                <p className="mt-1 text-xs uppercase tracking-wide text-ink-500">{entree.lieu} - {entree.periode} · {entree.duree}</p>
-                <hr className="my-4 border-grey"></hr>
-                <ul className="mt-4 flex flex-col gap-2 text-left text-base text-ink-700">
-                  {entree.resume.map((ligne, i) => (
-                    <li key={i} className="flex gap-2">
-                      <span aria-hidden="true" className="text-coral-500">
-                        ●
-                      </span>
-                      <span>{ligne}</span>
-                    </li>
-                  ))}
-                </ul>
+                  <h2 className="text-left font-menu text-2xl font-bold text-ink-900 pr-20 sm:pr-24 lg:pr-0">{entree.title}</h2>
+                  <hr className="my-4 border-grey"></hr>
+                  <p className="mt-2 font-menu text-xl text-coral-600">{entree.fonction}</p>
+                  <p className="mt-1 text-base text-ink-700">{entree.client}</p>
+                  <p className="mt-1 text-xs uppercase tracking-wide text-ink-500">{entree.lieu} - {entree.periode} · {entree.duree}</p>
+                  <hr className="my-4 border-grey"></hr>
+                  <ul className="mt-4 flex flex-col gap-2 text-left text-base text-ink-700">
+                    {entree.resume.map((ligne, i) => (
+                      <li key={i} className="flex gap-2">
+                        <span aria-hidden="true" className="text-coral-500">
+                          ●
+                        </span>
+                        <span>{ligne}</span>
+                      </li>
+                    ))}
+                  </ul>
 
-                <div className="z-10 w-full flex justify-center lg:hidden">
-                  <AnimatePresence mode="wait">
-                    <motion.img
-                      key={`mobile-${entree.radarImage}`}
-                      src={entree.radarImage}
-                      alt={`Graphique radar des compétences pour ${entree.title}`}
-                      initial={{ opacity: 0, scale: 0.92 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.92 }}
-                      transition={{ duration: 0.35 }}
-                      className="w-full object-contain drop-shadow-xl max-w-md floating "
-                      loading="lazy"
-                    />
-                  </AnimatePresence>
+                  <div className="z-10 w-full flex justify-center lg:hidden">
+                    <AnimatePresence mode="wait">
+                      <motion.img
+                        key={`mobile-${entree.radarImage}`}
+                        src={entree.radarImage}
+                        alt={`Graphique radar des compétences pour ${entree.title}`}
+                        initial={{ opacity: 0, scale: 0.92 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.92 }}
+                        transition={{ duration: 0.35 }}
+                        className="w-full object-contain drop-shadow-xl max-w-md floating "
+                        loading="lazy"
+                      />
+                    </AnimatePresence>
+                  </div>
                 </div>
               </div>
-
               {/* Droite : visuel 3D pré-rendu du radar propre à cette
                   entrée, animé en flottement. Réservé au desktop (≥ lg) :
                   sur mobile, le même visuel est déjà intégré dans le bloc

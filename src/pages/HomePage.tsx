@@ -33,6 +33,14 @@ export function HomePage({ visible }: HomePageProps) {
   const [titreFerme, setTitreFerme] = useState(false);
   const [guideOuvert, setGuideOuvert] = useState(false);
   const [progressionSimulee, setProgressionSimulee] = useState(0);
+  // true dès que l'utilisateur a visité "/" au moins une fois (jamais remis à
+  // false ensuite) : soit en arrivant directement sur "/" (entrée classique),
+  // soit en cliquant sur le logo "AGRANDJEAN" depuis une autre page. Tant que
+  // c'est false, <Scene3D> n'est même pas monté : arriver directement sur
+  // /projets, /cv ou /contact (lien direct, rechargement) ne doit jamais
+  // déclencher le téléchargement de la scène Spline (fichier .splinecode de
+  // ~4,8 Mo + runtime WASM) en arrière-plan.
+  const [aDejaEteVisite, setADejaEteVisite] = useState(visible);
   const etaitVisible = useRef(visible);
 
   // Ferme définitivement la page tampon dès que l'utilisateur quitte
@@ -41,6 +49,12 @@ export function HomePage({ visible }: HomePageProps) {
   // moment où titreFerme change. Elle ne réapparaîtra plus jamais ensuite,
   // même en revenant sur "/" via le header.
   useEffect(() => {
+    if (visible) {
+      // Première visite de "/" (entrée classique ou clic sur le logo depuis
+      // une autre page) : monte désormais <Scene3D> pour de bon, cette
+      // visite ne sera jamais "oubliée" le reste de la session.
+      setADejaEteVisite(true);
+    }
     if (etaitVisible.current && !visible) {
       setTitreFerme(true);
     }
@@ -101,40 +115,52 @@ export function HomePage({ visible }: HomePageProps) {
       aria-hidden={!visible}
       inert={!visible || undefined}
     >
-      {!titreFerme && (
-        <div className="absolute inset-0 z-40">
-          <TitlePage
-            progress={progressionSimulee}
-            pret={sceneReady}
-            onEnterScene={() => {
-              setTitreFerme(true);
-              setGuideOuvert(true);
-            }}
-            onNavigate={(route) => {
-              // La fermeture définitive de la page tampon est gérée par
-              // l'effet ci-dessus (dès que "visible" passe à false), donc
-              // sans jamais exposer la scène 3D même une fraction de seconde.
-              navigate(route);
-            }}
-          />
-        </div>
+      {/* Tant que l'utilisateur n'a jamais visité "/" (ni à l'arrivée, ni via
+          un clic ultérieur sur le logo), rien n'est monté ici : ni la page
+          tampon, ni surtout <Scene3D>, qui téléchargerait sinon la scène
+          Spline (~4,8 Mo + runtime WASM) même sur une page qui n'affiche
+          jamais la scène 3D (Projets, CV, Contact). On combine avec `visible`
+          directement (plutôt que d'attendre la mise à jour de l'état via
+          l'effet ci-dessus) pour éviter un flash d'une frame sans contenu au
+          moment précis où l'utilisateur clique sur le logo. */}
+      {(aDejaEteVisite || visible) && (
+        <>
+          {!titreFerme && (
+            <div className="absolute inset-0 z-40">
+              <TitlePage
+                progress={progressionSimulee}
+                pret={sceneReady}
+                onEnterScene={() => {
+                  setTitreFerme(true);
+                  setGuideOuvert(true);
+                }}
+                onNavigate={(route) => {
+                  // La fermeture définitive de la page tampon est gérée par
+                  // l'effet ci-dessus (dès que "visible" passe à false), donc
+                  // sans jamais exposer la scène 3D même une fraction de seconde.
+                  navigate(route);
+                }}
+              />
+            </div>
+          )}
+
+          {titreFerme && <Header />}
+          <div className="h-full w-full">
+            <Scene3D onReady={() => setSceneReady(true)} />
+          </div>
+
+          {titreFerme && <DialogueBox flowId="accueil" repliques={dialogues.accueil} />}
+
+          {/* Guide de navigation (tourner/se déplacer/zoomer) : affiché
+              automatiquement à chaque entrée dans la scène 3D, fermable, et
+              de nouveau affiché à chaque nouvelle visite (pas de mémorisation). */}
+          <AnimatePresence>
+            {titreFerme && guideOuvert && (
+              <NavigationGuide onClose={() => setGuideOuvert(false)} />
+            )}
+          </AnimatePresence>
+        </>
       )}
-
-      {titreFerme && <Header />}
-      <div className="h-full w-full">
-        <Scene3D onReady={() => setSceneReady(true)} />
-      </div>
-
-      {titreFerme && <DialogueBox flowId="accueil" repliques={dialogues.accueil} />}
-
-      {/* Guide de navigation (tourner/se déplacer/zoomer) : affiché
-          automatiquement à chaque entrée dans la scène 3D, fermable, et de
-          nouveau affiché à chaque nouvelle visite (pas de mémorisation). */}
-      <AnimatePresence>
-        {titreFerme && guideOuvert && (
-          <NavigationGuide onClose={() => setGuideOuvert(false)} />
-        )}
-      </AnimatePresence>
     </div>
   );
 }
@@ -158,7 +184,7 @@ function MobileHomePage() {
         </p>
 
         <div className="flex w-full max-w-xs flex-col gap-3">
-          <Link to="/projets" className="rounded-pill bg-coral-500 px-5 py-3 font-menu text-base text-white shadow-pop">
+          <Link to="/projets" className="rounded-pill bg-cream-50 px-5 py-3 font-menu text-base text-ink-700 shadow-soft">
             Afficher les projets
           </Link>
           <Link to="/cv" className="rounded-pill bg-cream-50 px-5 py-3 font-menu text-base text-ink-700 shadow-soft">
