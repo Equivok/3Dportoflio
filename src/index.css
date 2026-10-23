@@ -207,7 +207,6 @@ button {
   padding: 6px 16px;
   border-radius: var(--radius-pill);
   font-family: var(--font-menu);
-  font-size: rem;
   white-space: nowrap;
 }
 .tag-competence--coral {

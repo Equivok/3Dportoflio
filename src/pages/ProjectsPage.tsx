@@ -10,6 +10,7 @@ import { useLocalStorage } from '../hooks/useLocalStorage';
 import { useDeviceProfile } from '../hooks/useDeviceProfile';
 import { projects } from '../data/projects';
 import { dialogues } from '../data/dialogues';
+import { BlocsContenu } from '../components/BlocsContenu';
 import type { BlocContenu } from '../types';
 
 export function ProjectsPage() {
@@ -74,7 +75,7 @@ export function ProjectsPage() {
                   <div className="annee">{projetSelectionne.annee}</div>
                 </div>
                 <div className="flex">
-                  <h2 className="text-left font-menu text-2xl text-ink-700 bg-dark badge-l">
+                  <h2 className="text-left font-menu text-xl text-ink-700 bg-dark badge-l">
                     {projetSelectionne.titre}
                   </h2>
                 </div>
@@ -86,7 +87,7 @@ export function ProjectsPage() {
                         à la place d'un résumé textuel. */}
                     <ul className="mt-3 flex flex-wrap gap-2" aria-label="Compétences utilisées sur ce projet">
                       {projetSelectionne.competences.map((competence) => (
-                        <li key={competence.label} className={`tag-competence tag-competence--${competence.couleur}`}>
+                        <li key={competence.label} className={`tag-competence text-sm tag-competence--${competence.couleur}`}>
                           {competence.label}
                         </li>
                       ))}
@@ -149,36 +150,8 @@ export function ProjectsPage() {
 function SectionProjet({ titre, blocs }: { titre: string; blocs: BlocContenu[] }) {
   return (
     <div className="mt-4 flex flex-col">
-      <h3 className="font-menu text-xl font-bold">{titre}</h3>
-      <div className="mt-2 flex flex-col gap-2">
-        {blocs.map((bloc, i) => (
-          <BlocProjet key={i} bloc={bloc} />
-        ))}
-      </div>
+      <h3 className="font-menu text-lg font-bold">{titre}</h3>
+      <BlocsContenu blocs={blocs} className="mt-2" />
     </div>
   );
-}
-
-/** Rendu d'un bloc de contenu unique, selon son type (voir `BlocContenu`). */
-function BlocProjet({ bloc }: { bloc: BlocContenu }) {
-  switch (bloc.type) {
-    case 'sous-titre':
-      return <h4 className="text-base font-bold mt-2">{bloc.texte}</h4>;
-    case 'liste':
-      return (
-        <ul className="flex flex-col gap-2">
-          {bloc.items.map((item, i) => (
-            <li key={i} className="flex gap-2 text-base leading-relaxed text-ink-700">
-              <span aria-hidden="true" className="text-coral-500">
-                ●
-              </span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-      );
-    case 'paragraphe':
-    default:
-      return <p className="text-base leading-relaxed text-ink-700">{bloc.texte}</p>;
-  }
 }

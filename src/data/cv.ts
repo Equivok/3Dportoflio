@@ -15,7 +15,7 @@ export const experiences: EntreeCV[] = [
   {
     id: 'exp-django',
     type: 'experience',
-    title: 'Application mobile',
+    title: 'Simplifier la souscription et la gestion des crédits',
     fonction: 'Product Designer',
     numero: 1,
     periode: '2026',
@@ -23,16 +23,17 @@ export const experiences: EntreeCV[] = [
     client: 'Django - La banque postale',
     lieu: 'île de france',
     resume: [
-      "Conception de produits digitaux de bout en bout, de la recherche à l'UI finale",
-      'Mise en place de design systems réutilisables',
-      'Collaboration étroite avec les équipes de développement',
+      { type: 'paragraphe',
+        texte: "Conception UX/UI d'une application mobile et d'un back-office conseiller." },
+      { type: 'paragraphe',
+        texte: "Optimisation des parcours utilisateurs, amélioration de la hiérarchie de l'information et refonte du design system. Collaboration directe avec le CMO et les développeurs." },
     ],
     radarImage: '/images/Avatar/expert/Django.png',
   },
   {
     id: 'exp-Reco',
     type: 'experience',
-    title: 'Outil de recouvrement',
+    title: 'Repenser le traitement des dossiers de recouvrement',
     fonction: 'Product Designer',
     numero: 2,
     periode: '2026',
@@ -40,16 +41,17 @@ export const experiences: EntreeCV[] = [
     client: 'Orange',
     lieu: 'île de france',
     resume: [
-      "Conception et direction du design d’un outil de recouvrement.",
-      "Supervision de trois équipes (design et développement) afin de maintenir une vision produit unifiée et d’accélérer la livraison.",
-      "Réalisation de tests utilisateurs tout au long du projet, permettant d’identifier les frictions, d’ajuster les interfaces et d’obtenir un outil final plus efficace et mieux adopté."
+      { type: 'paragraphe',
+        texte: "Conception et pilotage du design d'un outil de recouvrement." },
+      { type: 'paragraphe',
+        texte: "Coordination de trois équipes design et développement pour garantir une vision produit cohérente. Tests utilisateurs itératifs pour identifier les frictions et optimiser l'efficacité des interfaces." },
     ],
     radarImage: '/images/Avatar/expert/Reco.png',
   },
   {
     id: 'exp-Maia',
     type: 'experience',
-    title: 'Assistant virtuel basé sur l’intelligence artificielle',
+    title: 'Concevoir un assistant IA pour les conseillers',
     fonction: 'Product Designer',
     numero: 3,
     periode: '2025',
@@ -57,16 +59,15 @@ export const experiences: EntreeCV[] = [
     client: 'Orange',
     lieu: 'île de france',
     resume: [
-      'Définition et intégration d’un agent IA dans l’outil utilisé par les conseillers en centre d’appels.',
-      'Analyse des contraintes de l’interface actuelle pour y inclure une zone de discussion avec l’IA sans perturber les interactions existantes.',
-      'Développement de nouveaux composants du design system pour répondre aux besoins émergents et assurer une expérience unifiée.'
+      { type: 'paragraphe', texte: "Intégration d'un agent IA dans l'outil des conseillers en centre d'appels." },
+      { type: 'paragraphe', texte: "Adaptation de l'interface existante pour intégrer un espace conversationnel sans perturber les usages, et création de composants dédiés au sein du design system." },
     ],
     radarImage: '/images/Avatar/expert/Maia.png',
   },
   {
     id: 'exp-Commande',
     type: 'experience',
-    title: 'Outil de suivi de commande',
+    title: 'Réunir le suivi des commandes dans une seule interface',
     fonction: 'Product Designer',
     numero: 4,
     periode: '2024',
@@ -74,16 +75,15 @@ export const experiences: EntreeCV[] = [
     client: 'Orange',
     lieu: 'île de france',
     resume: [
-      'Refonte complète d’un outil de suivi de commande.',
-      'Analyse des écrans existants, restructuration du parcours utilisateur et réalisation de tests afin de valider la cohérence et la fiabilité de l’expérience.',
-      'Compréhension détaillée des flux produit, création de maquettes et prototypes, puis accompagnement des équipes de développement jusqu’à la mise en production.'
+      { type: 'paragraphe', texte: "Refonte complète d'un outil de suivi de commande, de l'analyse de l'existant à la mise en production. " },
+      { type: 'paragraphe', texte: "Restructuration des parcours, prototypage et tests utilisateurs pour fiabiliser l'expérience, en collaboration avec les équipes de développement." },
     ],
     radarImage: '/images/Avatar/expert/Commande.png',
   },
   {
     id: 'exp-eligibilite',
     type: 'experience',
-    title: 'Outil d’éligibilité',
+    title: "Fiabiliser l'éligibilité aux offres grâce à une localisation plus précise",
     fonction: 'Product Designer',
     numero: 5,
     periode: '2024',
@@ -91,15 +91,15 @@ export const experiences: EntreeCV[] = [
     client: 'Orange',
     lieu: 'île de france',
     resume: [
-      'Conception d’un outil permettant de déterminer l’éligibilité d’un client via l’envoi d’un SMS, basé sur la géolocalisation.',
-      'Élaboration de la recherche utilisateur, de l’analyse des besoins et des parcours, afin de définir clairement les usages avant de concevoir les maquettes finales.'
+      { type: 'paragraphe', texte: "Conception d'un outil de vérification de l'éligibilité client par SMS et géolocalisation." },
+      { type: 'paragraphe', texte: "Exploration des besoins, recherche utilisateur et formalisation des parcours pour définir une solution adaptée aux usages." },
     ],
     radarImage: '/images/Avatar/expert/Eligibilite.png',
   },
   {
     id: 'exp-DS-metier',
     type: 'experience',
-    title: 'Design system',
+    title: 'Faire évoluer le design system pour les outils métier',
     fonction: 'Product Designer',
     numero: 6,
     periode: '2023',
@@ -107,8 +107,8 @@ export const experiences: EntreeCV[] = [
     client: 'Orange',
     lieu: 'île de france',
     resume: [
-      'Conception d’un design system destiné aux conseillers internes, répondant à leurs besoins spécifiques en matière de typographie, couleurs, espacements et composants adaptés à leur environnement métier.',
-      'Création d’une grille cohérente et de composants modulaires, gestion des variantes, tests d’usage, et mise en place d’un processus de mise à jour pour garantir la qualité, la cohérence et la pérennité des écrans.'
+      { type: 'paragraphe', texte: "Création d'un design system dédié aux conseillers internes : fondations visuelles, grille, composants modulaires et gestion des variantes." },
+      { type: 'paragraphe', texte: " Définition de règles de contribution et de mise à jour pour pérenniser la cohérence des interfaces." },
     ],
 
     radarImage: '/images/Avatar/expert/DS_orange.png',
@@ -116,7 +116,7 @@ export const experiences: EntreeCV[] = [
   {
     id: 'exp-New-RDV',
     type: 'experience',
-    title: 'Outil de gestion de rendez-vous',
+    title: 'Simplifier la gestion des rendez-vous en boutique',
     fonction: 'Product Designer',
     numero: 7,
     periode: '2023',
@@ -124,16 +124,15 @@ export const experiences: EntreeCV[] = [
     client: 'Orange',
     lieu: 'île de france',
     resume: [
-      'Conception d’un outil destiné aux conseillers en boutique pour gérer l’ensemble des rendez-vous, physiques ou virtuels.',
-      'Réalisation d’interviews utilisateurs et d’observations terrain afin de comprendre les contraintes et besoins réels.',
-      'Animation d’ateliers d’idéation pour co-construire les solutions, puis création de maquettes et prototypes alignés avec les usages et les attentes des conseillers.'
+      { type: 'paragraphe', texte: "Création d'un outil de gestion des rendez-vous physiques et virtuels en boutique." },
+      { type: 'paragraphe', texte: "Interviews, observations terrain et ateliers d'idéation pour identifier les besoins des conseillers, puis conception de maquettes et prototypes adaptés à leurs usages." },
     ],
     radarImage: '/images/Avatar/expert/New-rdv.png',
   },
   {
     id: 'exp-Assist',
     type: 'experience',
-    title: 'Outil de gestion',
+    title: "Centraliser le traitement des demandes d'assistance",
     fonction: 'Product Designer',
     numero: 8,
     periode: '2023',
@@ -141,10 +140,8 @@ export const experiences: EntreeCV[] = [
     client: 'Orange',
     lieu: 'île de france',
     resume: [
-      'Conception d’un nouvel outil de gestion des demandes d’assistance mobile et internet.',
-      'Création d’un tableau de bord permettant de visualiser et traiter efficacement l’ensemble des demandes client.',
-      'Réalisation d’ateliers d’idéation, sondages et questionnaires pour cerner les besoins.',
-      'Conception de maquettes et prototypes, suivie de tests utilisateurs et d’une phase de recette pour garantir la qualité de l’outil.'
+      { type: 'paragraphe', texte: "Conception d'un outil de traitement des demandes d'assistance client, articulé autour d'un tableau de bord opérationnel." },
+      { type: 'paragraphe', texte: "Recueil des besoins par ateliers et questionnaires, maquettage, prototypage, tests utilisateurs et recette fonctionnelle." },
     ],
 
     radarImage: '/images/Avatar/expert/Gestion.png',
@@ -152,7 +149,7 @@ export const experiences: EntreeCV[] = [
   {
     id: 'exp-Deviseur',
     type: 'experience',
-    title: 'Deviseur',
+    title: "Fluidifier la souscription aux offres santé, habitation et automobile",
     fonction: 'UX / UI Designer',
     numero: 9,
     periode: '2021',
@@ -160,15 +157,15 @@ export const experiences: EntreeCV[] = [
     client: 'Crédit agricole',
     lieu: 'île de france',
     resume: [
-      'Conception et réalisation de nouveaux parcours utilisateurs pour les produits santé, habitation et automobile.',
-      'Réalisation d’interviews utilisateurs pour comprendre les besoins et attentes, création de maquettes adaptées à tous les devices, élaboration de prototypes interactifs, et conduite de tests utilisateurs pour valider et optimiser les parcours avant déploiement.'
+      { type: 'paragraphe', texte: "Conception de parcours de souscription pour les produits santé, habitation et automobile." },
+      { type: 'paragraphe', texte: "Interviews utilisateurs, maquettes responsives et prototypes interactifs, suivis de tests pour affiner les parcours avant déploiement." },
     ],
     radarImage: '/images/Avatar/confirme/Deviseur.png',
   },
   {
     id: 'exp-DS-CA',
     type: 'experience',
-    title: 'Design system',
+    title: "Structurer un design system évolutif pour les équipes produit",
     fonction: 'UX / UI Designer',
     numero: 10,
     periode: '2021',
@@ -176,15 +173,15 @@ export const experiences: EntreeCV[] = [
     client: 'Crédit agricole',
     lieu: 'île de france',
     resume: [
-      'Définition des principes de design (cohérence, accessibilité, modularité), création d’une bibliothèque de composants réutilisables et responsives, normalisation du langage visuel (tokens, styles, grilles) et rédaction d’une documentation claire à destination des équipes produit, design et tech.',
-      'Mise en place d’un processus de gouvernance (contribution, revue, versioning) pour assurer la qualité, l’évolutivité et l’adoption du design system à l’échelle de l’organisation.'
+      { type: 'paragraphe', texte: "Élaboration d'un design system responsive intégrant tokens, styles, grilles et composants réutilisables." },
+      { type: 'paragraphe', texte: "Documentation et gouvernance des contributions pour garantir l'accessibilité, la qualité et l'évolution du système à l'échelle de l'organisation." },
     ],
     radarImage: '/images/Avatar/confirme/DS-ca.png',
   },
   {
     id: 'exp-MNT',
     type: 'experience',
-    title: 'Design system',
+    title: "Simplifier les parcours de souscription et les formulaires",
     fonction: 'UX / UI Designer',
     numero: 11,
     periode: '2020',
@@ -192,18 +189,15 @@ export const experiences: EntreeCV[] = [
     client: 'MNT',
     lieu: 'île de france',
     resume: [
-      'Création de nouveaux parcours sur l’ensemble des produits.',
-      'Conception et réalisation de formulaires.',
-      'Refonte de plusieurs applications ( UX, UI et intégration ).',
-      'Création de pages HTML.',
-      'Élaboration d’un story book avec les différents composants.'
+      { type: 'paragraphe', texte: "Création de parcours utilisateurs et de formulaires pour différents produits." },
+      { type: 'paragraphe', texte: "Refonte UX/UI d'applications existantes, intégration front-end et constitution d'un Storybook pour documenter les composants." },
     ],
     radarImage: '/images/Avatar/confirme/MNT.png',
   },
   {
     id: 'exp-Nomade',
     type: 'experience',
-    title: 'Nomade',
+    title: "Concevoir un site web pour accompagner les usages internes",
     fonction: 'UX / UI Designer',
     numero: 12,
     periode: '2020',
@@ -211,16 +205,15 @@ export const experiences: EntreeCV[] = [
     client: 'La poste',
     lieu: 'île de france',
     resume: [
-      'Création d’un site internet sous Wordpress.',
-      'Création de l’arborescence, du parcours utilisateur, des wireframes, des maquettes et du prototype.',
-      'Création du thème en CSS et édition des éléments en HTML'
+      { type: 'paragraphe', texte: "Conception d'un site web sous WordPress, de l'arborescence aux maquettes et prototypes." },
+      { type: 'paragraphe', texte: "Développement du thème en CSS et intégration des éléments en HTML." },
     ],
     radarImage: '/images/Avatar/confirme/Nomade.png',
   },
   {
     id: 'exp-Ametix',
     type: 'experience',
-    title: 'MEILLEUR DEV DE FRANCE',
+    title: "Créer une plateforme web dédiée à l'événement Meilleur Dev de France",
     fonction: 'UX / UI Designer',
     numero: 13,
     periode: '2019',
@@ -228,16 +221,15 @@ export const experiences: EntreeCV[] = [
     client: 'Ametix',
     lieu: 'île de france',
     resume: [
-      'Création du site « meilleur dev de france » sur WordPress.',
-      'Création de maquettes et intégration des différents contenus.',
-      'Refonte en CSS du thème pour adaptation des besoins.'
+      { type: 'paragraphe', texte: "Réalisation du site événementiel « Meilleur Dev de France » sous WordPress." },
+      { type: 'paragraphe', texte: "Conception des maquettes, intégration des contenus et personnalisation du thème en CSS." },
     ],
     radarImage: '/images/Avatar/confirme/Ametix.png',
   },
   {
     id: 'exp-METLIFE',
     type: 'experience',
-    title: 'Deviseur',
+    title: "Simplifier la saisie des informations dans un formulaire de souscription",
     fonction: 'UX / UI Designer',
     numero: 14,
     periode: '2018',
@@ -245,16 +237,15 @@ export const experiences: EntreeCV[] = [
     client: 'Metlife',
     lieu: 'île de france',
     resume: [
-      'Conception et création d’un formulaire.',
-      'Création des différentes étapes à travers des wireframes puis maquettage & prototypage.',
-      'Création du formulaire en HTML & CSS + JS'
+      { type: 'paragraphe', texte: "Conception d'un formulaire structuré en plusieurs étapes, du wireframing au prototypage interactif." },
+      { type: 'paragraphe', texte: "Développement de l'interface en HTML, CSS et JavaScript." },
     ],
     radarImage: '/images/Avatar/confirme/Metlife.png',
   },
   {
     id: 'exp-SUADEO',
     type: 'experience',
-    title: 'Branding',
+    title: "Harmoniser l'identité visuelle des applications et supports internes",
     fonction: 'UX / UI Designer',
     numero: 15,
     periode: '2018',
@@ -262,16 +253,15 @@ export const experiences: EntreeCV[] = [
     client: 'Suadeo',
     lieu: 'île de france',
     resume: [
-      'Refonte graphique des systèmes applicatifs.',
-      'Mise en place de templates pour le site interne.',
-      'Création de supports de communication.'
+      { type: 'paragraphe', texte: "Modernisation de l'identité graphique des applications et création de templates pour le site interne." },
+      { type: 'paragraphe', texte: "Réalisation de supports de communication pour renforcer la cohérence visuelle de la marque." },
     ],
     radarImage: '/images/Avatar/junior/Suadeo.png',
   },
   {
     id: 'exp-CA-Vitrine',
     type: 'experience',
-    title: 'Refonte graphique',
+    title: "Moderniser l'expérience visuelle des sites institutionnels",
     fonction: 'UX / UI Designer',
     numero: 16,
     periode: '2017',
@@ -279,16 +269,15 @@ export const experiences: EntreeCV[] = [
     client: 'Crédit agricole',
     lieu: 'île de france',
     resume: [
-      'Refonte graphique de l’ensemble des sites vitrines.',
-      'Créations de wireframes RWD et application de la charte graphique du Crédit Agricole.',
-      'Réalisation et intégration de contenu HTML & CSS.'
+      { type: 'paragraphe', texte: "Déclinaison de la charte graphique sur une application iPad destinée aux traders internes." },
+      { type: 'paragraphe', texte: "Adaptation des wireframes, mise en conformité des interfaces et intégration des contenus en HTML/CSS." },
     ],
     radarImage: '/images/Avatar/junior/CA-vitrine.png',
-  },
+  },  
   {
     id: 'exp-BNP-app',
     type: 'experience',
-    title: 'Application trading',
+    title: "Adapter une application de trading aux usages sur iPad",
     fonction: 'UX / UI Designer',
     numero: 17,
     periode: '2017',
@@ -296,16 +285,15 @@ export const experiences: EntreeCV[] = [
     client: 'BNP PARIBAS',
     lieu: 'île de france',
     resume: [
-      'Création d’un application sur Ipad à destination des traders internes à la BNP Paribas.',
-      'Réception des wireframes pour application de la charte graphique et mise en conformité pour intégration.',
-      'Intégration des contenus HTML et création du design en CSS.'
+      { type: 'paragraphe', texte: "Modernisation de l'identité visuelle des sites vitrines du Crédit Agricole." },
+      { type: 'paragraphe', texte: "Production de wireframes responsives, déclinaison de la charte graphique et intégration des interfaces en HTML/CSS." },
     ],
     radarImage: '/images/Avatar/junior/BNP-app.png',
   },
   {
     id: 'exp-AUBAY',
     type: 'experience',
-    title: "Création d'un site internet",
+    title: "Digitaliser le parcours d'accueil des collaborateurs",
     fonction: 'UX / UI Designer',
     numero: 18,
     periode: '2017',
@@ -313,17 +301,15 @@ export const experiences: EntreeCV[] = [
     client: 'Aubay',
     lieu: 'île de france',
     resume: [
-      'Création d’un site interne à l’entreprise avec le CMS WordPress afin de dématérialiser le « Welcome Pack ».',
-      'Réalisation de charte graphique, maquettes et prototypage.',
-      'Intégration des contenus dans WordPress.',
-      'Respect et application des normes d’accessibilités W3C.'
+      { type: 'paragraphe', texte: "Conception d'un site WordPress destiné à digitaliser le parcours d'accueil des collaborateurs. " },
+      { type: 'paragraphe', texte: "Définition de l'identité visuelle, maquettage, prototypage et intégration des contenus dans le respect des normes d'accessibilité W3C." },
     ],
     radarImage: '/images/Avatar/junior/Aubay.png',
   },
   {
     id: 'exp-AUBAY-Blog',
     type: 'experience',
-    title: 'Blog interne',
+    title: "Faciliter le partage d'informations grâce à un blog interne",
     fonction: 'UX / UI Designer',
     numero: 19,
     periode: '2017',
@@ -331,10 +317,8 @@ export const experiences: EntreeCV[] = [
     client: 'Aubay',
     lieu: 'île de france',
     resume: [
-      'Création d’un blog pour le site interne de l’entreprise.',
-      'Réalisation de wireframes, maquettes et prototypage',
-      'Création et intégration d’un sous-site avec le CMS WordPress.',
-      'Mise en place du design en CSS'
+      { type: 'paragraphe', texte: "Création d'un blog pour l'intranet de l'entreprise." },
+      { type: 'paragraphe', texte: "Réalisation des wireframes et maquettes, prototypage puis développement d'un sous-site WordPress avec personnalisation du style en CSS." },
     ],
     radarImage: '/images/Avatar/junior/Aubay-blog.png',
   },

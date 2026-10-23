@@ -171,13 +171,15 @@ function MobileHomePage() {
     <div className="min-h-screen bg-cream-100">
       <Header />
       <main className="flex flex-col items-center gap-8 px-6 pb-16 pt-28 text-center">
-        <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>
-          <h1 className="font-display text-4xl text-coral-500">
-            A<span className="text-ink-900">GRANDJEAN</span>
-          </h1>
-          <p className="mt-2 font-menu text-base text-ink-700">Product Designer web & application</p>
-        </motion.div>
-
+        <div className="relative mx-auto flex w-full max-w-[12rem] items-center justify-center sm:max-w-xs lg:h-full lg:max-w-none lg:p-10">
+            <img
+              src="/images/Avatar/expert/hello.png"
+              alt=""
+              aria-hidden="true"
+              className="w-full object-contain drop-shadow-xl"
+              loading="lazy"
+            />
+          </div>
         <p className="max-w-md text-base text-ink-700">
           Bienvenue ! Cette version mobile met de côté la scène 3D pour rester rapide et légère.
           Explore mes projets, mon CV, ou dis-moi bonjour.
@@ -194,6 +196,7 @@ function MobileHomePage() {
             Prendre contact
           </Link>
         </div>
+
       </main>
     </div>
   );

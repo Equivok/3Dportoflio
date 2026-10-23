@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Header } from '../components/Header';
 import { DialogueBox } from '../components/DialogueBox';
 import { CvTimeline } from '../components/CvTimeline';
+import { BlocsContenu } from '../components/BlocsContenu';
 import { SidebarMenu, type SidebarCategory } from '../components/SidebarMenu';
 import { PageBackdrop } from '../components/PageBackdrop';
 import { PAGE_BACKGROUND_IMAGE } from '../config/background';
@@ -155,16 +156,7 @@ export function CvPage() {
                   <p className="mt-1 text-base text-ink-700">{entree.client}</p>
                   <p className="mt-1 text-xs uppercase tracking-wide text-ink-500">{entree.lieu} - {entree.periode} · {entree.duree}</p>
                   <hr className="my-4 border-grey"></hr>
-                  <ul className="mt-4 flex flex-col gap-2 text-left text-base text-ink-700">
-                    {entree.resume.map((ligne, i) => (
-                      <li key={i} className="flex gap-2">
-                        <span aria-hidden="true" className="text-coral-500">
-                          ●
-                        </span>
-                        <span>{ligne}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <BlocsContenu blocs={entree.resume} className="mt-4 text-left" />
 
                   <div className="z-10 w-full flex justify-center lg:hidden">
                     <AnimatePresence mode="wait">

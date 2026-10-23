@@ -91,7 +91,8 @@ export interface ExperienceCV {
   duree: string;
   client: string;
   lieu: string;
-  resume: string[];
+  /** Résumé formaté librement avec les mêmes blocs que la page Projets (paragraphe, sous-titre, liste) */
+  resume: BlocContenu[];
   radarImage: string;
 }
 

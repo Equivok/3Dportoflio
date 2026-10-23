@@ -156,7 +156,7 @@ function SidebarCategoryBlock({
         type="button"
         onClick={onToggle}
         aria-expanded={estOuverte}
-        className="flex w-full items-center justify-between gap-2 p-5 text-left text-2xl"
+        className="flex w-full items-center justify-between gap-2 p-5 text-left text-lg"
         style={
           categorie.banniere
             ? {
@@ -167,7 +167,7 @@ function SidebarCategoryBlock({
             : undefined
         }
       >
-        <span className={clsx('font-menu font-bold text-xl', categorie.banniere ? 'text-white' : 'text-ink-900')}>
+        <span className={clsx('font-menu font-bold text-base', categorie.banniere ? 'text-white' : 'text-ink-900')}>
           {categorie.label}
         </span>
         <span className="flex items-center gap-2">

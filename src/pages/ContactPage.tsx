@@ -51,10 +51,10 @@ export function ContactPage() {
               de gauche ; dès lg, reprend sa place à droite en pleine taille. */}
           <div className="relative order-1 mx-auto flex w-full max-w-[12rem] items-center justify-center sm:max-w-xs lg:order-2 lg:h-full lg:max-w-none lg:p-10">
             <img
-              src="/images/Avatar/neutre.png"
+              src="/images/Avatar/expert/hello.png"
               alt=""
               aria-hidden="true"
-              className="w-full object-contain drop-shadow-xl floating"
+              className="w-full object-contain drop-shadow-xl"
               loading="lazy"
             />
           </div>
