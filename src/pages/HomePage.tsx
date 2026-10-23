@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import { Header } from '../components/Header';
 import { DialogueBox } from '../components/DialogueBox';
 import { Scene3D } from '../components/Scene3D';
