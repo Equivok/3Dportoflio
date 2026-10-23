@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Header } from '../components/Header';
 import { DialogueBox } from '../components/DialogueBox';
@@ -47,6 +47,30 @@ export function CvPage() {
     setSelectedId(TOUTES_ENTREES[clamped].id);
   };
 
+  // Swipe tactile (mobile/tablette, là où les flèches sont masquées) : un
+  // glissement horizontal change d'expérience. Sens cohérent avec la frise
+  // (ancien à gauche, récent à droite) : glisser vers la gauche = suivante
+  // (plus récente), vers la droite = précédente. Seuils : au moins 60px et
+  // nettement plus horizontal que vertical, pour ne jamais gêner le scroll.
+  const departToucher = useRef<{ x: number; y: number } | null>(null);
+  const SEUIL_SWIPE_PX = 60;
+
+  const debutToucher = (e: React.TouchEvent) => {
+    const t = e.touches[0];
+    departToucher.current = { x: t.clientX, y: t.clientY };
+  };
+
+  const finToucher = (e: React.TouchEvent) => {
+    const depart = departToucher.current;
+    departToucher.current = null;
+    if (!depart) return;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - depart.x;
+    const dy = t.clientY - depart.y;
+    if (Math.abs(dx) < SEUIL_SWIPE_PX || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+    allerAu(dx < 0 ? indexActuel + 1 : indexActuel - 1);
+  };
+
   return (
     <div className="min-h-screen">
       <PageBackdrop fond={PAGE_BACKGROUND_IMAGE} />
@@ -88,7 +112,11 @@ export function CvPage() {
 
       <div className="mx-auto flex flex-col w-full flex-1 items-center px-4 pb-4 pt-6 sm:px-6 lg:pt-30">
 
-        <div className="flex items-center h-full max-w-7xl w-full rounded-20">
+        <div
+          className="flex items-center h-full max-w-7xl w-full rounded-20"
+          onTouchStart={debutToucher}
+          onTouchEnd={finToucher}
+        >
           <AnimatePresence mode="wait">
             <motion.div
               key={entree.id}
